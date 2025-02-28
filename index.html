@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marie Lenvik</title>
+  </head>
+  <body>
+
+
+    <!--Ta bort när sidan är klar-->
+
+    <!-- Popup Modal -->
+  <div class="modal" id="popupModal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2>Välkommen!</h2>
+      <p>Den här sidan är än så länge under utveckling.</p>
+    </div>
+  </div>
+
+    <!--Ta bort när sidan är klar-->
+
+    <header>
+      <input type="checkbox" />
+      <div class="meny">
+        <button aria-label="Navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav>
+          <ul>
+            <li><a href="#page-1">Hem</a></li>
+            <li><a href="#page-2">Färdigheter</a></li>
+            <li>
+              <a href="#page-3"
+                >HTLM uppgift <br />
+                -pixel perfekt-</a
+              >
+            </li>
+            <li>
+              <a href="#page-4"
+                >Javascript <br />
+                -webshop-</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="page_1" id="page-1">
+      <main class="presentation" id="presentation">
+        <section class="presentation_text">
+          <div class="about_me">
+            <div class="picture">
+              <img
+              src="pictures/marie_lenvik.JPG"
+              width="800"
+              height="602"
+              loading="lazy"
+              alt="Marie Lenvik, sittandes på ett berg"
+              />
+            </div>
+            <div class="headings">
+              <h1>Marie Lenvik</h1>
+              <h2>
+                Frontend developer <br />
+                & UX designer
+              </h2>
+            </div>
+          </div>
+          <p>
+            Jag är student inom frontend utveckling och söker LIA plats till hösten 2025. Tidigare har jag studerat
+            systemvetenskap med spetskompetens i interaktionsdesign. <br />
+            Under min praktikperiod hoppas jag få en djupare insikt i front end, men jag är också intresserad av att
+            arbeta i en roll nära UX designers samt att lära mig mer kring gränssnittsdesign. Eftersom jag har ett
+            privat intresse inom fotografering skulle det även vara roligt att lära en del inom bildredigering. Bilden
+            här till höger är ett montage jag gjort av viadukten och fartyget. Jag har även skapat skuggan av fartyget.
+            <br />
+            Vidare på denna sida presenterar jag de projekt jag arbetet med i mina studier på Medieinstitutet.
+          </p>
+        </section>
+        <section class="presentation_picture">
+          <div class="montage">
+            <img
+              src="pictures/montage.png"
+              width="800"
+              height="602"
+              loading="lazy"
+              alt="bild på fartyg monterat i damm"
+            />
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="page_2" id="page-2">
+      <h3>Mina färdigheter</h3>
+    <!--
+      <p>Adobe Flash Adobe Photoshop Agile utveckling HTML5 CSS SASS Javascript Typescript SQL UML UX UI WCAG 2.0</p>
+      -->
+      <div class="word_cloud">
+        <span class="box_1">Adobe Flash</span>
+        <span class="box_2">Adobe Photoshop</span>
+        <span class="box_3">Agile utveckling</span>
+        <span class="box_4">HTML5</span>
+        <span class="box_5">CSS</span>
+        <span class="box_6">SASS</span>
+        <span class="box_7">Javascript</span>
+        <span class="box_8">Typescript</span>
+        <span class="box_9">SQL</span>
+        <span class="box_10">UML</span>
+        <span class="box_11">UX</span>
+        <span class="box_12">UI</span>
+        <span class="box_13">WCAG 2.0</span>
+        <span class="box_14">Visual Studio Code</span>
+      </div>
+    </div>
+
+    <div class="page_3" id="page-3">
+      <h4>
+        HTLM uppgift <br />
+        -pixel perfekt-
+      </h4>
+
+      <div class="task">
+        <aside class="task_description">
+          Uppgiftsbeskrivning<br />
+          Uppgiften var att skapa en så lik sida som möjligt med HTML och CSS. <br />
+          Detta var den allra första uppgiften på utbildningen
+        </aside>
+        <article class="solution">
+          Lösning <br />
+          <img
+            src="pictures/html_pixel_perfect.png"
+            width="1923"
+            height="2259"
+            loading="lazy"
+            alt="Skärmdump på pixel perfect uppgift"
+          />
+        </article>
+      </div>
+    </div>
+
+    <div class="page_4" id="page-4">
+      <h5>
+        Javascript <br />
+        -webshop-
+      </h5>
+
+      <div class="task">
+        <aside class="task_description">
+          Uppgiftsbeskrivning <br />
+          Gottfrid Jästson är en kreativ och företagsam person i Snaskköping, som i många år har sålt munkar i butik.
+          Tyvärr har han märkt av sjunkande försäljningssiffror på grund av allsköns "kurirer" som far runt på
+          livsfarliga elsparkcyklar i staden. Det verkar som att ungdomarna inte längre orkar gå utanför dörren för att
+          inhandla mat?! Nåväl, Gottfrid misströstar inte mer än nödvändigt; en liten webbshop för munkar* vore på sin
+          plats - och just ditt företag, Webbyrån Justin Time AB, har blivit utvald som leverantör för att bygga den!
+          Det vilar nu på dina axlar att Gottfrid inte går i konkurs.
+
+          <br />
+          <ul>
+            <li>
+              Beställningssidan ska vara en sida; du ska inte växla mellan kundkorg och produktöversikt t.ex. Det räcker
+              alltså med en HTML-fil och tillhörande JavaScript-kod.
+            </li>
+            <li>
+              Webbshoppen ska vara responsiv. Hur design/utseende ser ut, är upp till er, men det ska fungera på mobil,
+              tablet & desktop.
+            </li>
+            <li>Gränssnittet/sidans utseende ska vara intuitivt.</li>
+            <li>
+              Det ska gå att utföra hela beställningsförfarandet med hjälp av enbart tangentbordet (tillgängligt).
+            </li>
+            <li>
+              Bredvid/i anslutning till varje munk ska det finnas knappar för att öka och minska antalet beställda
+              munkar. Tänk på att dessa ska fungera även med tangentbordet.
+            </li>
+            <li>Munkarna är hårdkodade i filen (de behöver inte komma från ett API, en databas eller JSON-fil).</li>
+            <li>
+              När man tryckt på beställ-knappen så ska en bekräftelse-ruta visas med information om beställningen och
+              leveranstid.
+            </li>
+            <li>Produkterna ska gå att sortera utifrån namn, pris, kategori och rating</li>
+          </ul>
+        </aside>
+        <article class="solution">
+          Lösning <br />
+          <img
+            src="pictures/javascript_webshop.png"
+            width="1518"
+            height="3429"
+            loading="lazy"
+            alt="Skärmdump på Gottfrids munkshop"
+          />
+        </article>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer_columns">            
+        <h5>Telefon</h5>
+        <p>Privat: 073-969 79 27
+        <br/>Arbete/Dagtid: 073-543 87 72 </p>
+      </div>
+      
+      <div class="footer_columns">            
+        <h5>E-post</h5>
+        <p>lenvik.marie@gmail.com</p>
+      </div>
+
+      <div class="footer_columns">
+        <p>https://github.com/M-Lenvik</p>
+      </div>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

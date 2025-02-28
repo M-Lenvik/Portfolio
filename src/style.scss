@@ -1,0 +1,416 @@
+body {
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /**********************Ta bort när sidan är klar***************/
+  /* Stilar för pop-up fönstret */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-content h2 {
+    margin: 0 0 10px;
+    color: #213547;
+  }
+  
+  .modal-content p {
+    color: #555;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .close-button:hover {
+    color: #e74c3c;
+  }
+  /**********************Ta bort när sidan är klar***************/
+  
+  header {
+    position: relative;
+    display: flex;
+    z-index: 999;
+    justify-content: space-between;
+    width: 50px;
+    margin-left: 0;
+  
+    /*~*:._.:*~*:._.:*~*:._.:*~*:._MENYKNAPP_.:*~*:._.:*~*:._.:*~*:._.:*~*/
+    button {
+      width: 50px;
+      height: 50px;
+      background-color: rgb(34, 34, 34);
+      border-radius: 50%;
+      position: fixed;
+      left: 10px;
+      top: 10px;
+      z-index: 2;
+      pointer-events: none;
+    }
+  
+    button span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: whitesmoke;
+      border-radius: 6px;
+      margin-left: 4px;
+      margin-bottom: 3px;
+    }
+  
+    input {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1;
+      width: 35px;
+      height: 35px;
+      opacity: 0;
+    }
+  
+    input:checked + .meny button span {
+      position: absolute;
+      transition: all 0.3s ease-in-out;
+    }
+  
+    input:checked + .meny button span:nth-child(2) {
+      opacity: 0;
+    }
+  
+    input:checked + .meny button span:nth-child(1) {
+      transform: rotate(45deg);
+    }
+  
+    input:checked + .meny button span:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+  
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgb(245, 245, 245, 0.8);
+      width: 100vw;
+      height: 100vh;
+      opacity: 0;
+      transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+      visibility: hidden;
+    }
+  
+    input:checked + .meny nav {
+      visibility: visible;
+      opacity: 1;
+    }
+  
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-evenly;
+      text-align: center;
+  
+      font-size: 1em;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: 'Jockey One', sans-serif;
+      color: #213547;
+  
+      a:link {
+        color: #213547;
+        font-size: 3em;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: 'Jockey One', sans-serif;
+        margin-bottom: 5%;
+      }
+  
+      a:visited {
+        color: gray;
+      }
+    }
+  }
+  
+  .page_1{
+    background-color: whitesmoke;
+    min-height: 100vh;
+  
+  .presentation {
+    display: flex;
+    flex-direction: row;
+  
+    .presentation_text {
+      width: 50%;
+  
+      .about_me {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+  
+        .picture{
+          width: 40%;
+          margin-left: -10px;
+          margin-top: -10px;
+  
+          img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 50%;
+  
+          }
+        }
+  
+        .headings {
+          width: 70%;
+          margin-left: 5%;
+          padding: 20px;
+  
+          h1 {
+            font-size: 2.5em;
+            font-family: 'Montserrat Alternates', serif;
+            font-weight: 800;
+            font-style: normal;
+          }
+          h2 {
+            margin-top: 0.5em;
+            font-family: 'Montserrat Alternates', serif;
+            font-weight: 600;
+            font-style: normal;
+          }
+        }
+      }
+      p {
+        padding: 3% 10%;
+      }
+    }
+  
+    .presentation_picture {
+      width: 50%;
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+  }
+  }
+  
+  
+  
+  
+  .page_2{
+    background-color: darkgrey;
+    min-height: 100vh;
+    position: relative;
+    
+    h3{
+      font-family: 'Montserrat Alternates', serif;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 2em;
+      text-align: center;
+      padding-top: 1em;
+      padding-bottom: 1em;
+    }
+  
+    .word_cloud {
+      position: relative;
+      display: flex;
+      height: 75vh;
+      width: 100vw;
+  
+      span {
+        width: 8em;
+        height: 4em;
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+  
+        word-break: break-word;
+        text-overflow: ellipsis;
+        border-radius: 10px;
+        font-size: 1.2em;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+  
+      .box_1{ //Adobe Flash
+        position: absolute;
+        top: 10%; 
+        left: 20%;
+      }
+  
+      .box_2{//Adobe Photoshop
+        position: absolute;
+        top: 15%; 
+        left: 35%;
+      }
+  
+      .box_3{//Agile utveckling
+        position: absolute;
+        top: 25%; 
+        left: 40%;
+      }
+  
+      .box_4{//HTML5
+        position: absolute;
+        top: 35%; 
+        left: 10%;
+      }
+  
+      .box_5{//CSS
+        position: absolute;
+        top: 45%; 
+        left: 20%;
+      }
+      .box_6{//SASS
+        position: absolute;
+        top: 55%; 
+        left: 30%;
+      }
+      .box_7{//Javascript
+        position: absolute;
+        top: 60%; 
+        left: 10%;
+      }
+      .box_8{//Typescript
+        position: absolute;
+        top: 75%; 
+        left: 20%;
+      }
+      .box_9{//SQL
+        position: absolute;
+        top: 25%; 
+        left: 70%;
+      }
+      .box_10{//UML
+        position: absolute;
+        top: 15%; 
+        left: 80%;
+      }
+      .box_11{//UX
+        position: absolute;
+        top: 45%; 
+        left: 50%;
+      }
+      .box_12{//UI
+        position: absolute;
+        top: 55%; 
+        left: 60%;
+      }
+      .box_13{//WCAG 2.0
+        position: absolute;
+        top: 65%; 
+        left: 50%;
+      }
+      .box_14{//VS Code
+        position: absolute;
+        top: 80%; 
+        left: 75%;
+      }
+  
+    }
+  
+    
+  }
+  
+  .page_3{
+    background-color: whitesmoke;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    h4{
+      font-family: 'Montserrat Alternates', serif;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 2em;
+      text-align: center;
+      padding-top: 1em;
+      padding-bottom: 1em;
+    }
+  }
+  
+  .page_4{
+    background-color: darkgrey;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    h5{
+      font-family: 'Montserrat Alternates', serif;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 2em;
+      text-align: center;
+      padding-top: 1em;
+      padding-bottom: 1em;
+    }
+  }
+  
+  footer{
+    background-color: CadetBlue;
+    display: flex;
+    padding: 2%;
+    .footer_columns{
+      margin-left: 10%;
+      justify-content: center;
+    }
+  }
+  
+  
+  .task{
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  margin-left: 15%;
+  img{
+    width: 100%;
+    height: auto;}
+  
+  .task_description{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  border: #213547 solid 2px;
+  height: auto;
+  }
+  
+  .solution{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  border: #213547 solid 2px;
+  height: 100%;
+  }}

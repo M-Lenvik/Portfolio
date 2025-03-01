@@ -1,5 +1,9 @@
+$project-primary-blue: #94b5ca;
+$project-primary-beige: #DBD3A0;
+$project-primary-pink: #FF8A4D;
+
 body {
-    background-color: whitesmoke;
+    background-color: #94b5ca;
     font-family: Arial, Helvetica, sans-serif;
   }
   
@@ -64,12 +68,12 @@ body {
   
     /*~*:._.:*~*:._.:*~*:._.:*~*:._MENYKNAPP_.:*~*:._.:*~*:._.:*~*:._.:*~*/
     button {
-      width: 50px;
-      height: 50px;
+      width: 150px;
+      height: 150px;
       background-color: rgb(34, 34, 34);
       border-radius: 50%;
       position: fixed;
-      left: 10px;
+      right: 10px;
       top: 10px;
       z-index: 2;
       pointer-events: none;
@@ -77,12 +81,12 @@ body {
   
     button span {
       display: block;
-      width: 25px;
-      height: 3px;
+      width: 100px;
+      height: 5px;
       background-color: whitesmoke;
       border-radius: 6px;
-      margin-left: 4px;
-      margin-bottom: 3px;
+      margin-left: 18px;
+      margin-bottom: 10px;
     }
   
     input {
@@ -160,62 +164,75 @@ body {
     }
   }
   
+
   .page_1{
-    background-color: whitesmoke;
+    background-color: $project-primary-blue;
+  //  background-color: #94b5ca;
     min-height: 100vh;
+    max-width: 80%;
+    margin-left: 10%;
+    border: #213547 solid 5px;
   
+
+    .about_me {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      border: #213547 solid 5px;
+
+      .picture{
+        width: 20%;
+        margin-left: -10px;
+        margin-top: -10px;
+        border: #213547 solid 5px;
+
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          border-radius: 50%;
+
+        }
+      }
+
+      .headings {
+        width: 100%;
+        margin-left: 1%;
+        padding: 20px;
+        border: #213547 solid 5px;
+
+        h1 {
+          font-size: 2.5em;
+          font-family: 'Montserrat Alternates', serif;
+          font-weight: 800;
+          font-style: normal;
+        }
+        h2 {
+          margin-top: 0.5em;
+          font-family: 'Montserrat Alternates', serif;
+          font-weight: 600;
+          font-style: normal;
+        }
+      }
+    }
+
+
   .presentation {
     display: flex;
     flex-direction: row;
+    border: #213547 solid 5px;
   
     .presentation_text {
       width: 50%;
   
-      .about_me {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-  
-        .picture{
-          width: 40%;
-          margin-left: -10px;
-          margin-top: -10px;
-  
-          img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 50%;
-  
-          }
-        }
-  
-        .headings {
-          width: 70%;
-          margin-left: 5%;
-          padding: 20px;
-  
-          h1 {
-            font-size: 2.5em;
-            font-family: 'Montserrat Alternates', serif;
-            font-weight: 800;
-            font-style: normal;
-          }
-          h2 {
-            margin-top: 0.5em;
-            font-family: 'Montserrat Alternates', serif;
-            font-weight: 600;
-            font-style: normal;
-          }
-        }
-      }
       p {
-        padding: 3% 10%;
+        padding: 3% 3%;
       }
     }
   
     .presentation_picture {
       width: 50%;
+      margin: 0 3%;
       img {
         width: 100%;
         height: auto;
@@ -229,7 +246,8 @@ body {
   
   
   .page_2{
-    background-color: darkgrey;
+    background-color: $project-primary-beige;
+//    background-color: darkgrey;
     min-height: 100vh;
     position: relative;
     
@@ -348,7 +366,7 @@ body {
   }
   
   .page_3{
-    background-color: whitesmoke;
+    background-color: $project-primary-blue;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -364,7 +382,7 @@ body {
   }
   
   .page_4{
-    background-color: darkgrey;
+    background-color: $project-primary-beige;
     min-height: 100vh;
     display: flex;
     flex-direction: column;

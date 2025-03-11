@@ -7,12 +7,12 @@
   "description": "Marie Lenviks Portfolio",
   "icons": [
     {
-      "src": "/pictures/logotype.png",
+      "src": "/Portfolio/pictures/logotype.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/pictures/logotype.png",
+      "src": "/Portfolio/pictures/logotype.png",
       "sizes": "512x512",
       "type": "image/png"
     }

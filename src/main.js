@@ -48,4 +48,58 @@ window.addEventListener("click", (event) => {
 
 
 
+/* TA BORT OM ANIMATION:HTML EJ ANVÄNDS* /
+    // Funktion för att läsa in HTML från en annan fil
+    fetch('animation.html')
+        .then(response => response.text())
+        .then(data => {
+            // Infoga det lästa innehållet i elementet med id 'external-content'
+            document.getElementById('external-content').innerHTML = data;
+        })
+        .catch(error => console.error('Fel vid inläsning av HTML:', error));
+*/
+
+
+
+        /** Gäller initialerna i namnet */
+const tl = new gsap.timeline();
+const letters = [
+    "#letter_m",  
+    "#letter_l", 
+];
+
+letters.forEach((letter) => {
+  tl.to(letter, { 
+    duration: 1.5, 
+    fill: "#b96300",
+    transformOrigin: "center center",
+    rotation: 360,
+  });
+});
+
+
+
+
+/** Gäller cirkeln */
+gsap.set("#cls-2-group_initials", { fill: "#000" }); //Sätter initial färg  
+gsap.to("#cls-2-group_initials", { 
+  duration: 5, 
+  fill: "#b96300",
+  transformOrigin: "50% 50%", 
+  rotation: 360, 
+  repeat: -1, //Upprepa oändligt
+  repeatDelay: 5
+});
+
+gsap.to('#cls-2-tagg-group', { 
+  transformOrigin: "50% 50%", 
+  rotation: "-=360", 
+  duration: 10, 
+  ease: "linear",
+  repeat: -1,
+  yoyo: true,
+});
+
+
+
 setupCounter(document.querySelector('#counter'));

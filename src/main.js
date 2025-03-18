@@ -1,6 +1,7 @@
 import './normalize.scss';
 import "./style.scss";
 import "./_mobile.scss";
+import "./_desktop.scss";
 
 //import javascriptLogo from "./javascript.svg";
 //import viteLogo from "/vite.svg";

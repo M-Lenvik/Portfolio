@@ -186,32 +186,39 @@ body {
       width: 100%;
       height:auto;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       margin-bottom: 2%;
+      border: brown solid 5px;
 
       .picture{
-        width: 25%;
-        height: auto;
+        width: 35%;
+        height: 150px;
         position: relative;
         overflow: visible;
         flex-shrink: 0;
+        border: green solid 5px;
 
         img {
           position: absolute;
           width: auto;
           height: 100%;
           object-fit: cover;
-          right: 5%;
+          left: 0;
           border-radius: 50%;
+          border: black solid 5px;
         }
       }
 
       .headings {
-        width: 75%;
+        width: 85%;
         margin-left: 0;
-        padding: 20px;
-        
+        border: blue solid 5px;
+        display: flex;
+        flex-direction: column;
+        margin-left: 10%;
+
         h1 {
+          border: brown solid 5px;
           font-size: 2.5em;
           font-family: 'Montserrat Alternates', serif;
           font-weight: 800;
@@ -219,6 +226,7 @@ body {
         }
         
         h2 {
+          border: brown solid 5px;
           margin-top: 0.5em;
           font-family: 'Montserrat Alternates', serif;
           font-weight: 600;
@@ -226,6 +234,7 @@ body {
         }
 
         .name{
+          border: brown solid 5px;
           margin-left: 0;
           width: 75%;
 
@@ -244,7 +253,6 @@ body {
     min-height: 100vh;
     max-width: 100vw;
     margin-top: 1%;
-    background-color: blue;
 
     .presentation {
       width: 100%;
@@ -452,40 +460,36 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: wheat;
-    border: #000000 solid 2px;
   }
   
 
   
   .line {
-    width: 80%;
+    width: 90%;
     height: 2px;
     background-color: #505050;
-    margin: 2% 10% 2% 10%;
+    margin: 2% 5% 2% 5%;
   }
   
   
   .task{
-    background-color: gray;
     display: flex;
     flex-direction: row;
     width: 90%;
-    min-height: 100%;
+    height: auto;
     margin-left: 5%;
     margin-bottom: 2%;
 
     .description{
-      background-color: blue;
       border: red solid 5px;
       width: 100%;
+      height: 100%;
       display: flex;
       flex-direction: column;
-      gap: 50px;
+      gap: 5px;
 
       
       .text_container{
-        background-color:blueviolet;
         width: 100%;
         height: 100%;
         display: flex;
@@ -497,7 +501,6 @@ body {
         gap: 15px;
 
         p{
-          border: #000000 solid 2px;
           width: 100%;
           display: flex;
           align-items: flex-end;
@@ -505,20 +508,13 @@ body {
       }
 
       .pictures_containers{
-        border: #000000 solid 2px;
         width: 100%;
+        height: auto;
         padding: 0;
         bottom: 0;
         display: flex;
         justify-content: center;
         align-items: center;
-
-        /*
-        p{
-          margin-bottom: 10%;
-          font-weight: 600;
-        }
-*/
 
         img{
           border: green solid 5px;
@@ -529,17 +525,18 @@ body {
         }
 
         .video{
-          max-height: 80vh;
+          max-height: 70vh;
         }
 
         
         .smaller_size{
-          max-height: 50vh;
+          max-height: 100%;
           display: flex;
-          flex-direction: row;
+          flex-direction: column;
+          background-color: yellow;
 
           img{
-            max-width: 50%;
+            max-height: 30vh;
             padding: 2%;
           }
         }
@@ -549,6 +546,7 @@ body {
 
 
   .overall_description{
+    border: brown solid 5px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -576,6 +574,7 @@ body {
   }
 
   .task_compared{
+    border: brown solid 5px;
     display: flex;
     flex-direction: row;
     width: 70%;
@@ -664,8 +663,9 @@ body {
     width: 100%;
     display: flex;
     flex-direction: row;
-    gap: 15px;
-    justify-content:left;
+    justify-content:center;
+    gap: 20px;
+
 
     a{
       color: #000000;
@@ -688,8 +688,9 @@ body {
     display: flex; /* Gör att li-elementen ligger på rad */
     flex-direction: row; /* Säkerställer att li ligger på rad */
     flex-wrap: wrap;
+    justify-content:center;
     gap: 20px;
-  
+
     li {
       margin-right: 10px; /* Lägg till mellanrum mellan varje li, kan justeras efter behov */
       background-color: #000000;

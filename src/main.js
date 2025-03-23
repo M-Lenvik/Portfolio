@@ -74,7 +74,7 @@ const letters = [
 letters.forEach((letter) => {
   tl.to(letter, { 
     duration: 1.5, 
-    fill: "#b96300",
+    fill: "#b96300", //orange
     transformOrigin: "center center",
     rotation: 360,
   });

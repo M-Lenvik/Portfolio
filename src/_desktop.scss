@@ -1,4 +1,4 @@
-@media (min-width: 969px) {
+@media (min-width: 968px) {
 $project-primary-grey: #cccccc;
 $project-primary-beige: #DBD3A0;
 $project-primary-orange: #c4c2c2;
@@ -106,9 +106,12 @@ body{
     .Tech_cards {
         width: 70%;
         margin-left: 15%;
-        justify-content: space-around;
+        display: flex;
+        text-align: center;
+        justify-content: space-evenly;
+        padding: 2%;
     }
-    }
+}
   
   .project{
     display: flex;

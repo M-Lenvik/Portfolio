@@ -313,7 +313,7 @@ body {
     align-items: center;
 
     .Tech_cards {
-      width: 98%;
+      width: 80%;
       list-style: none; /* Tar bort punktlistan */
       padding: 0; /* Tar bort inbyggd padding */
       margin: 5% 0; /* Tar bort inbyggd margin */
@@ -321,8 +321,9 @@ body {
       display: flex; /* Gör att li-elementen ligger på rad */
       flex-direction: row; /* Säkerställer att li ligger på rad */
       flex-wrap: wrap;
-      justify-content: center; /* Centrera innehållet horisontellt */
+      justify-content: space-evenly;
       gap: 20px;
+      padding: 2%;
 
       li {
         margin-right: 10px; /* Lägg till mellanrum mellan varje li, kan justeras efter behov */

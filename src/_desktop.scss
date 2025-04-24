@@ -85,6 +85,10 @@ body{
         p {
           padding-right: 5%;
         }
+
+        .part2{
+          margin-top: 20px;
+        }
       }
     
       .presentation_picture {
@@ -355,7 +359,7 @@ body{
  
 
 
-  h3{
+  h1, h2, h3{
     font-family: 'Montserrat Alternates', serif;
     font-weight: 600;
     font-style: normal;
@@ -375,4 +379,32 @@ body{
   }
 
 
+.cv{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    justify-content: space-around;
+
+    h1, h2, h3{
+      text-align: left;
+    }
+
+  .main_content{
+    display: flex;
+    flex-direction: column;
+  width: 45%;
+
+  }
+  .education{
+    display: flex;
+    flex-direction: column;
+  width: 45%;
+  }
+  }
+}
+
+p{
+  font-size: 18px;
 }

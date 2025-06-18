@@ -1,7 +1,7 @@
 @media (min-width: 968px) {
 $project-primary-grey: #cccccc;
 $project-primary-beige: #DBD3A0;
-$project-primary-orange: #c4c2c2;
+$project-primary-orange: #C26700;
 $project-secondary-grey: #505050;
 $project-primary-link-background: rgba(219, 219, 219, 0.63);
 
@@ -162,7 +162,7 @@ body{
 
         img{
           height: auto;
-          width: 100%;
+          width: 80%;
           object-fit: cover;
         }
 
@@ -172,6 +172,17 @@ body{
 
         
         .smaller_size{
+          max-height: 50vh;
+          display: flex;
+          flex-direction: row;
+
+          img{
+            max-width: 50%;
+            padding: 2%;
+          }
+        }
+        
+        .small{
           max-height: 50vh;
           display: flex;
           flex-direction: row;
@@ -391,17 +402,18 @@ body{
       text-align: left;
     }
 
-  .main_content{
-    display: flex;
-    flex-direction: column;
-  width: 45%;
 
-  }
-  .education{
-    display: flex;
-    flex-direction: column;
-  width: 45%;
-  }
+    .tech_skills{
+      display: flex;
+      flex-direction: column;
+      width: 35%;
+    }
+
+    .education{
+      display: flex;
+      flex-direction: column;
+      width: 35%;
+    }
   }
 }
 

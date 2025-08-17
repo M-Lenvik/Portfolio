@@ -20,15 +20,16 @@ export const Hero = () => {
           <br />
           Vidare på denna sida presenterar jag de projekt jag arbetat med i mina
           studier på Medieinstitutet.
+         {/*
           <p>
-
-          Om du är intresserad av att se närmre på min utbildning får du gärna
+           Om du är intresserad av att se närmre på min utbildning får du gärna
           läsa mitt CV.
           </p>
+          */}
 
-<p style={{ fontSize: '0.8rem', fontWeight: 'bold', marginTop: '1em' }}>
-  Observera att min portfolio är under uppbyggnad och att jag inte är färdig med att skriva clean code, responsivitet, och tillgänglighet. Inte heller stylingen är helt klar.
-</p>
+        <p style={{ fontSize: '0.8rem', fontWeight: 'bold', marginTop: '1em' }}>
+          Observera att min portfolio är under uppbyggnad och att jag inte är färdig med att skriva clean code, responsivitet, och tillgänglighet. Inte heller stylingen är helt klar.
+        </p>
 
         </p>
 

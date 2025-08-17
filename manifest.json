@@ -1,0 +1,20 @@
+{
+  "name": "Marie Lenvik",
+  "short_name": "Marie Lenvik",
+  "start_url": "/Portfolio/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "Marie Lenviks Portfolio",
+  "icons": [
+    {
+      "src": "/Portfolio/pictures/logotype.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/Portfolio/pictures/logotype.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

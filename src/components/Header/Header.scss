@@ -1,0 +1,39 @@
+@use '../../Styles/color' as *;
+
+header {
+  display: flex;
+
+  .header__content {
+    display: flex; /* Gör så picture och name hamnar bredvid varandra */
+    width: 100%; /* Tar upp hela bredden */
+    align-items: center; /* Vertikal centrering */
+    gap: 3rem; /* Avstånd mellan bild och namn */
+    padding-right: 2rem;
+
+    .header__picture {
+      img {
+        width: 350px; /* Fast storlek istället för procent för bättre kontroll */
+        height: auto;
+        border-radius: 50%;
+        box-shadow: var(--shadow-default);
+      }
+    }
+
+    .header__name {
+      display: flex;
+      flex-direction: column; /* Gör så <p> och h2 staplas */
+      align-items: flex-end;
+      width: 100%; /* Gör så att namnet tar upp 100% av bredden */
+      margin: 0; /* Tar bort extra marginaler */
+      color: var(--color-headings);
+
+      .header__description {
+        margin-top: 0.25rem; /* Lite mellanrum under namnet */
+        max-width: 18ch; // ungefär 20 tecken innan radbrytning
+        text-align: right;
+        padding-right: 1.5rem;
+        color: var(--color-secondary);
+      }
+    }
+  }
+}

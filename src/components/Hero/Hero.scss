@@ -1,0 +1,41 @@
+@use '../../Styles/color' as *;
+
+.hero {
+  /* background-color: brown; */
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 2rem;
+
+  .hero__title {
+    color: var(--color-font);
+    font-family: var(--font-h3);
+  }
+
+  .hero__content {
+    display: flex;
+    width: 100%;
+
+    .hero__description,
+    .hero__picture {
+      flex: 0 0 50%; /* Tar exakt 50% var */
+      box-sizing: border-box; /* Så padding inte förstör procentbredden */
+    }
+
+    .hero__description {
+      text-align: left;
+      padding-right: 1rem;
+    }
+
+    .hero__picture {
+      img {
+        width: 100%; /* Gör så att bilden tar upp hela bredden */
+        height: auto; /* Behåller bildens proportioner */
+        border-radius: 8px;
+        box-shadow: var(--shadow-default);
+      }
+    }
+  }
+}

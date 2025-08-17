@@ -6,13 +6,13 @@ export const Header = () => {
     <header className="header" id='header'>
       <div className="header__content">
         <div className="header__picture">
-          <img
-            src="/images/marie_AI_generated.jfif"
-            width="800"
-            height="602"
-            loading="lazy"
-            alt="Marie Lenvik, AI genererat svartvitt porträtt"
-          />
+<img
+  src={`${import.meta.env.BASE_URL}images/marie_AI_generated.jfif`}
+  width="800"
+  height="602"
+  loading="lazy"
+  alt="Marie Lenvik, AI genererat svartvitt porträtt"
+/>
         </div>
 
         <div className="header__name">

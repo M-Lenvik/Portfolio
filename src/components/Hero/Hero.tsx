@@ -34,7 +34,7 @@ export const Hero = () => {
 
         <div className="hero__picture">
           <img
-            src="/images/montage.png"
+            src={`${import.meta.env.BASE_URL}images/montage.png`}
             width="800"
             height="602"
             loading="lazy"

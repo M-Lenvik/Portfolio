@@ -1,5 +1,51 @@
 @use '../../Styles/color' as *;
 
+//Mobile
+@media (max-width: 430px) {
+.hero {
+  /* background-color: brown; */
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  max-width: 95%;
+
+  //Samma
+  margin-top: 2rem;
+
+  //Samma
+  .hero__title {
+    color: var(--color-font);
+    font-family: var(--font-h3);
+  }
+
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .hero__description {
+      text-align: left;
+    }
+
+    .hero__picture {
+      margin-top: 2rem;
+
+      //Samma
+      img {
+        width: 100%; /* Gör så att bilden tar upp hela bredden */
+        height: auto; /* Behåller bildens proportioner */
+        border-radius: 8px;
+        box-shadow: var(--shadow-default);
+      }
+    }
+  }
+}
+}
+
+//Desktop
+@media (min-width: 431px) {
 .hero {
   /* background-color: brown; */
   display: flex;
@@ -38,4 +84,5 @@
       }
     }
   }
+}
 }

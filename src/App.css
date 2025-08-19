@@ -15,7 +15,6 @@
     margin: 0 auto;
     padding: 0;
     line-height: 1.6;
-    border: 5px solid green;
   }
 
   /* Basstil för länkar */
@@ -41,6 +40,5 @@
 @media (min-width: 431px) {
   #root {
     padding: 2rem;
-    border: 5px solid red;
   }
 }

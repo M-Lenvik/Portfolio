@@ -1,7 +1,7 @@
 {
   "name": "Marie Lenvik",
   "short_name": "Marie Lenvik",
-  "start_url": "/Portfolio/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "description": "Marie Lenviks Portfolio",

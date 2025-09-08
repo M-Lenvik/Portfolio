@@ -71,6 +71,14 @@
         
       }
     }
+
+    .project-card__descriptions{
+      p{
+        margin-top: 1em;
+      }
+
+    }
+
   }
 
   //Samma
@@ -169,6 +177,13 @@
         transform: scale(1.13);
 
     }
+    }
+
+        .project-card__descriptions{
+      p{
+        margin-top: 1em;
+      }
+
     }
   }
 .project-card__images {

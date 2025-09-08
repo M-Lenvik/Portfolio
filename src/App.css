@@ -39,6 +39,8 @@
 
 @media (min-width: 501px) {
   #root {
+    max-width: 1580px;
+    margin: 0 auto;
     padding: 2rem;
   }
 }

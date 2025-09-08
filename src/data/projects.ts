@@ -1,6 +1,17 @@
 //data/projects.ts
 export const projects = [
   {
+    title: 'Javascript Ramverk, React<br> The Zoo',
+    description:
+      "Återupplev tiden med tamagotchi. Se till att djuren på The Zoo inte är hungriga.",
+    tech_description:
+      'The Zoo är byggd med React och TypeScript och använder sig av localstrorage.',
+    image: `${import.meta.env.BASE_URL}images/The_Zoo.png`,
+    github: 'https://github.com/M-Lenvik/Javascript-ramverk-React-The-Zoo',
+    liveDemo: 'https://m-lenvik.github.io/Javascript-ramverk-React-The-Zoo/',
+    tech: ['React', 'TypeScript', 'SCSS', 'HTML'],
+  },
+  {
     title: 'Javascript Ramverk, React<br> ToDo App',
     description:
       "Samla dina ToDo's i denna sommriga app. Här kan du skapa och ta bort uppgifter.",

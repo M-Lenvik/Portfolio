@@ -27,12 +27,20 @@ export const ProjectCard = ({
           dangerouslySetInnerHTML={{ __html: title }}
         ></h3>
 
+        <div className='project-card__descriptions'>
         <p
           className="project-card__description"
           dangerouslySetInnerHTML={{
-            __html: `${description} ${tech_description}`,
+            __html: `${description}`,
           }}
         ></p>
+        <p
+          className="project-card__description"
+          dangerouslySetInnerHTML={{
+            __html: `${tech_description}`,
+          }}
+        ></p>
+        </div>
 
         {/* Tekniker */}
         <div className="project-card__techs">

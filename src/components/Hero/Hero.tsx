@@ -6,33 +6,32 @@ export const Hero = () => {
     <section className="hero">
       {/* <h1 className="hero__title">Welcome to My Portfolio</h1> */}
       <div className="hero__content">
-        <p className="hero__description">
+        <div className="hero__description">
+          <p>
+
           Jag är student inom frontend utveckling och söker LIA plats till
-          hösten 2025. Tidigare har jag studerat systemvetenskap med
-          spetskompetens i interaktionsdesign. <br />
-          Under min praktikperiod hoppas jag få en djupare insikt i front end,
-          men jag är också intresserad av att arbeta i en roll nära UX designers
-          samt att lära mig mer kring gränssnittsdesign. Eftersom jag har ett
-          privat intresse inom fotografering skulle det även vara roligt att
-          lära en del inom bildredigering. Bilden här intill är ett montage jag
-          gjort av viadukten och fartyget. Jag har även skapat speglingen av
-          fartyget.
-          <br />
+          hösten 2025. Under utbildningen har jag byggt en grund inom JavaScript, TypeScript, HTML, CSS/SCSS och har även arbetat med Vue och React. 
+          Jag har testat på backend med Node.js, Express och SQL, men mitt hjärta ligger i frontend och i att skapa användarvänliga, tillgängliga och visuellt tilltalande lösningar. <br />
+          Under min praktikperiod hoppas jag få en djupare insikt i front end där jag kan utvecklas med erfarna kollegor.
+          </p>
+          <p>
+
           Vidare på denna sida presenterar jag de projekt jag arbetat med i mina
           studier på Medieinstitutet.
          {/*
           <p>
-           Om du är intresserad av att se närmre på min utbildning får du gärna
+          Om du är intresserad av att se närmre på min utbildning får du gärna
           läsa mitt CV.
           </p>
           */}
+          </p>
 
         <p style={{ fontSize: '0.8rem', fontWeight: 'bold', marginTop: '1em' }}>
           Observera att min portfolio är under uppbyggnad och att jag inte är färdig med att skriva clean code, responsivitet, och tillgänglighet. Inte heller stylingen är helt klar.
         </p>
 
-        </p>
-
+        </div>
+{/*
         <div className="hero__picture">
           <img
             src={`${import.meta.env.BASE_URL}images/montage.png`}
@@ -42,6 +41,7 @@ export const Hero = () => {
             alt="bild på fartyg monterat i damm"
           />
         </div>
+*/}
       </div>
     </section>
   );

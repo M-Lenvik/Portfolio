@@ -4,6 +4,7 @@
 //components/ProjectCard.tsx
 //import "./ProjectCard.scss";
 // components/ProjectCard.tsx
+import { useEffect, useRef } from 'react';
 import './ProjectCard.scss';
 import type { ProjectCardProps } from '../../types';
 
@@ -18,10 +19,28 @@ export const ProjectCard = ({
   liveDemo,
   tech,
 }: ProjectCardProps) => {
+  const contentRef = useRef<HTMLDivElement>(null);
+  const imagesRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const matchHeights = () => {
+      if (contentRef.current && imagesRef.current && window.innerWidth >= 501) {
+        const contentHeight = contentRef.current.offsetHeight;
+        imagesRef.current.style.maxHeight = `${contentHeight}px`;
+      } else if (imagesRef.current) {
+        imagesRef.current.style.maxHeight = '';
+      }
+    };
+
+    matchHeights();
+    window.addEventListener('resize', matchHeights);
+    return () => window.removeEventListener('resize', matchHeights);
+  }, [title, description, tech_description, tech]);
+
   return (
     <div className="project-card" id='project-card'>
       {/* Innehåll */}
-      <div className="project-card__content">
+      <div className="project-card__content" ref={contentRef}>
         <h3
           className="project-card__title"
           dangerouslySetInnerHTML={{ __html: title }}
@@ -77,34 +96,36 @@ export const ProjectCard = ({
       </div>
 
       {/* Bilder / Video */}
-      <div className="project-card__images">
-        {video ? (
-          <video
-            src={video}
-            controls
-            autoPlay
-            loop
-            muted
-            className="project-card__image"
-          />
-        ) : Array.isArray(images) && images.length ? (
-          images.map((src, index) => (
+      <div className="project-card__images" ref={imagesRef}>
+        <div className="project-card__images-wrapper">
+          {video ? (
+            <video
+              src={video}
+              controls
+              autoPlay
+              loop
+              muted
+              className="project-card__image"
+            />
+          ) : Array.isArray(images) && images.length ? (
+            images.map((src, index) => (
+              <img
+                key={index}
+                src={src}
+                alt={`${title} bild ${index + 1}`}
+                className="project-card__image"
+                loading="lazy"
+              />
+            ))
+          ) : image ? (
             <img
-              key={index}
-              src={src}
-              alt={`${title} bild ${index + 1}`}
+              src={image}
+              alt={title.replace(/<br>/g, ' ')}
               className="project-card__image"
               loading="lazy"
             />
-          ))
-        ) : image ? (
-          <img
-            src={image}
-            alt={title.replace(/<br>/g, ' ')}
-            className="project-card__image"
-            loading="lazy"
-          />
-        ) : null}
+          ) : null}
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 //_color.scss
 
+/*
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -9,19 +10,17 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
-  /* Typografi och grunder */
+  /* Typografi och grunder * /
   --font-base: system-ui, Avenir, Helvetica, Arial, sans-serif;
   --font-h3: system-ui, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --color-font: #22223b;
 
-  /* Färger – generellt tema */
+  /* Färger – generellt tema * /
   --color-background: #9a8c98;
-  --color-primary: #c9ada7;
   --color-secondary: #f2e9e4;
   --color-headings: #22223b;
 
-  /* Neutrala färger */
-  --color-border: #505050;
+  /* Neutrala färger * /
   --color-button: #1a1a1a;
   --color-button-light: #f9f9f9;
   --color-links: #22223b;
@@ -29,7 +28,7 @@
   --color-links-rgb: 34, 34, 59;
 
 
-  /* Skuggor */
+  /* Skuggor * /
   --shadow-default: 4px 4px 4px 0px #4a4e69;
 
   font-synthesis: none;
@@ -37,3 +36,87 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+  */
+
+  :root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  
+    /* Typografi och grunder */
+    --font-base: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --font-h3: system-ui, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+    // Header colors
+    --color-header-background: #304050;
+    --color-header-picture-bg: #B2421F;
+    --color-header-picture-glow-rgb: 242, 130, 65;
+    --color-header-headings: #D87D64;
+
+    // Hero colors
+    --color-hero-font: #F4B7AB;
+
+    // Tech colors
+    --color-tech-font: #F4B7AB;
+    --color-tech: #304050;
+    --color-tech-background: #304050;
+
+    // Project colors
+    --color-project-headings: #F28241;
+    --color-project-font: #F28241;
+    --color-project-background: #304050;
+    --shadow-project-border: #B2421F;
+
+    --color-project-tech: #590823;
+    --color-project-tech-font: #ffffff;
+
+    // Footer colors
+    --color-footer-background: #304050;
+    --color-footer-font: #F4B7AB;
+    --color-footer-font-hover-color: #D87D64;
+    --color-footer-btn-border: #F4B7AB;
+    --color-footer-btn-color: #F4B7AB;
+    --color-footer-btn-hover-bg: #D87D64;
+    --color-footer-btn-hover-color: #304050;
+  
+    /* Färger – generellt tema */
+    --color-background: #304050;
+    --color-secondary: #f2e9e4;
+
+    --color-headings: #BF533B;
+    --color-headings-secondary: #bb5823;
+  
+    /* Neutrala färger */
+    --color-button: #BF533B;
+    --color-button-hover: #590823;
+    --color-button-light: #f9f9f9;
+    --color-button-font: #ffffff;
+
+    --color-links: #22223b;
+    --color-links-hover: #f2e9e4;
+    --color-links-rgb: 34, 34, 59;
+  
+  
+    /* Skuggor */
+    --shadow-default: 4px 4px 4px 0px #B2421F;
+    --color-border: #B2421F;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /*
+
+  #BEC7CE - Ljusblå
+  #304050 - Blå
+  #B2421F - Orange
+  #D87D64 - Laxrosa
+  #F4B7AB - Ljusrosa
+  */

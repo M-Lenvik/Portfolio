@@ -1,6 +1,17 @@
 //data/projects.ts
 export const projects = [
   {
+    title: 'Examensarbete<br>SåSmart',
+    description:
+      "SåSmart är en webbaserad planeringsverktyg designad för svenska hobbyodlare som vill ha ett tydligare och mer strukturerat sätt att planera sin odlingssäsong. Användare väljer plantor från en digital fröbank, anger ett önskat skördedatum, och applikationen beräknar automatiskt alla relaterade datum i odlingsprocessen, inklusive inomhus sådd, utomhus sådd, avhärdning, utplantering och skörd. Dessa datum presenteras i en kalendervy som visuellt guidar användaren genom hela odlingstidslinjen.",
+    tech_description:
+      'SåSmart är byggd med React och TypeScript och använder sig av localstrorage.',
+    image: `${import.meta.env.BASE_URL}images/SowSmart.png`,
+    github: 'https://github.com/M-Lenvik/Examensarbete-SowSmart',
+    liveDemo: 'https://m-lenvik.github.io/Examensarbete-SowSmart/',
+    tech: ['React', 'TypeScript', 'SCSS', 'HTML'],
+  },
+  {
     title: 'Javascript Ramverk, React<br> The Zoo',
     description:
       "Återupplev tiden med tamagotchi. Se till att djuren på The Zoo inte är hungriga.",

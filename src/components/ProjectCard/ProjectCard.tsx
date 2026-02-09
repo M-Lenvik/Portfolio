@@ -98,33 +98,33 @@ export const ProjectCard = ({
       {/* Bilder / Video */}
       <div className="project-card__images" ref={imagesRef}>
         <div className="project-card__images-wrapper">
-          {video ? (
-            <video
-              src={video}
-              controls
-              autoPlay
-              loop
-              muted
-              className="project-card__image"
-            />
-          ) : Array.isArray(images) && images.length ? (
-            images.map((src, index) => (
-              <img
-                key={index}
-                src={src}
-                alt={`${title} bild ${index + 1}`}
-                className="project-card__image"
-                loading="lazy"
-              />
-            ))
-          ) : image ? (
+        {video ? (
+          <video
+            src={video}
+            controls
+            autoPlay
+            loop
+            muted
+            className="project-card__image"
+          />
+        ) : Array.isArray(images) && images.length ? (
+          images.map((src, index) => (
             <img
-              src={image}
-              alt={title.replace(/<br>/g, ' ')}
+              key={index}
+              src={src}
+              alt={`${title} bild ${index + 1}`}
               className="project-card__image"
               loading="lazy"
             />
-          ) : null}
+          ))
+        ) : image ? (
+          <img
+            src={image}
+            alt={title.replace(/<br>/g, ' ')}
+            className="project-card__image"
+            loading="lazy"
+          />
+        ) : null}
         </div>
       </div>
     </div>

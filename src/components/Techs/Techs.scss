@@ -1,90 +1,71 @@
 @use '../../Styles/color' as *;
+@use '../../Styles/mixins' as *;
 
-//Mobile
-@media (max-width: 500px) {
+// Mobile-first: Base styles (mobile)
 .techs {
   display: flex;
   padding: 1.5em;
   height: fit-content;
   width: 95%;
   margin: 0 auto;
-  background-color: var(--color-secondary);
+  background-color: var(--color-tech-background);
   box-shadow: var(--shadow-default);
-  color: var(--color-font);
+  color: var(--color-tech-font);
   border-radius: 8px;
 
-.tech-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  &__group {
-    margin-bottom: 0.5rem;
-
-
+  .tech-stack {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    align-items: flex-start;
-  }
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
 
-  &__title {
-    font-weight: bold;
-    margin-right: 0;
-    flex-basis: 100%;
-  }
+    &__group {
+      margin-bottom: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
 
-  &__tech {
-    margin-bottom: 0.2rem;
-    background-color: var(--color-font); // samma som dina project-card__tech
-    color: var(--color-secondary); // välj textfärg som syns bra
-    padding: 0.2rem 0.6rem;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    white-space: nowrap;
+    &__title {
+      font-weight: bold;
+      margin-right: 0;
+      flex-basis: 100%;
+    }
+
+    &__tech {
+      padding: 0.2rem 0.6rem;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      white-space: nowrap;
+      box-shadow: var(--shadow-default);
+      color: var(--color-secondary);
+      background-color: var(--color-tech);
+      border: 1px solid var(--color-border);
+      margin-bottom: 0.2rem;
+    }
   }
 }
-}
-}
 
-//Desktop
+// Desktop: min-width 501px
 @media (min-width: 501px) {
-.techs {
-  display: flex;
-  padding: 1.5em;
-  height: fit-content;
-  width: 90%;
-  margin: 0 auto;
-  background-color: var(--color-secondary);
-  box-shadow: var(--shadow-default);
-  color: var(--color-font);
-  border-radius: 8px;
+  .techs {
+    width: 90%;
 
-.tech-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+    .tech-stack {
+      &__group {
+        align-items: center;
+        margin-bottom: 0;
+      }
 
-  &__group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    align-items: center;
+      &__title {
+        margin-right: 0.5rem;
+        flex-basis: auto;
+      }
+
+      &__tech {
+        margin-bottom: 0;
+      }
+    }
   }
-
-  &__title {
-    font-weight: bold;
-    margin-right: 0.5rem;
-  }
-
-  &__tech {
-    background-color: var(--color-font); // samma som dina project-card__tech
-    color: var(--color-secondary); // välj textfärg som syns bra
-    padding: 0.2rem 0.6rem;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    white-space: nowrap;
-  }
-}
-}
 }

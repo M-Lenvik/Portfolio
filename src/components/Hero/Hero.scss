@@ -1,24 +1,13 @@
 @use '../../Styles/color' as *;
+@use '../../Styles/mixins' as *;
 
-//Mobile
-@media (max-width: 500px) {
+// Mobile-first: Base styles (mobile)
 .hero {
-  /* background-color: brown; */
   display: flex;
   flex-direction: column;
   padding: 0;
-  margin: 0 auto;
-  margin-bottom: 2rem;
+  margin: 2rem auto 2rem;
   max-width: 95%;
-
-  //Samma
-  margin-top: 2rem;
-
-  //Samma
-  .hero__title {
-    color: var(--color-font);
-    font-family: var(--font-h3);
-  }
 
   .hero__content {
     display: flex;
@@ -27,67 +16,47 @@
 
     .hero__description {
       text-align: left;
+
+      p {
+        margin-bottom: 1em;
+        color: var(--color-hero-font);
+      }
     }
 
     .hero__picture {
       margin-top: 2rem;
 
-      //Samma
       img {
-        width: 100%; /* Gör så att bilden tar upp hela bredden */
-        height: auto; /* Behåller bildens proportioner */
-        border-radius: 8px;
+        @include image-base;
         box-shadow: var(--shadow-default);
       }
     }
   }
 }
-}
 
-//Desktop
+// Desktop: min-width 501px
 @media (min-width: 501px) {
-.hero {
-  /* background-color: brown; */
-  display: flex;
-  flex-direction: column;
-  padding: 0.5rem;
-  width: 90%;
-  margin-left: 5%;
-  margin-top: 2rem;
-  margin-bottom: 2em;
+  .hero {
+    padding: 0.5rem;
+    width: 90%;
+    margin-left: 5%;
 
-  .hero__title {
-    color: var(--color-font);
-    font-family: var(--font-h3);
-  }
+    .hero__content {
+      flex-direction: row;
 
-  .hero__content {
-    display: flex;
-    width: 100%;
-
-    .hero__description,
-    .hero__picture {
-      width: 100%;
-      box-sizing: border-box; /* Så padding inte förstör procentbredden */
-
-      p{
-        margin-bottom: 1em;
+      .hero__description,
+      .hero__picture {
+        width: 100%;
+        box-sizing: border-box;
       }
-    }
 
-    .hero__description {
-      text-align: left;
-      padding-right: 1rem;
-    }
+      .hero__description {
+        padding-right: 1rem;
+      }
 
-    .hero__picture {
-      img {
-        width: 100%; /* Gör så att bilden tar upp hela bredden */
-        height: auto; /* Behåller bildens proportioner */
-        border-radius: 8px;
-        box-shadow: var(--shadow-default);
+      .hero__picture {
+        margin-top: 0;
       }
     }
   }
-}
 }

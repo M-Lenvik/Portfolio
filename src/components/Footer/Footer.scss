@@ -1,101 +1,16 @@
 @use '../../Styles/color' as *;
+@use '../../Styles/mixins' as *;
 
-//Mobile
-@media (max-width: 500px) {
-  .footer {
-      width: 90%;
-    background: var(--color-primary);
-    color: var(--color-font);
-    padding: 4rem 2rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto;
-    margin-top: 2rem;
-    border-radius: 8px;
-  
-    .footer__top {
-      margin-bottom: 3rem;
-  
-      .footer__question {
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        margin-bottom: 1rem;
-        color: rgba(var(--color-font-rgb), 0.8);
-      }
-  
-      .footer__big-text {
-        font-size: 4rem;
-        font-weight: 900;
-        letter-spacing: 2px;
-        color: rgba(var(--color-font-rgb), 0.08); // blek bakgrundsrubrik
-        margin-bottom: 2.5rem;
-      }
-  
-      .footer__buttons {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.2rem;
-  
-        .footer__btn {
-          padding: 0.8rem 1.6rem;
-          border: 1px solid var(--color-font);
-          border-radius: 50px;
-          font-size: 0.9rem;
-          text-decoration: none;
-          color: var(--color-font);
-          transition: all 0.3s ease;
-  
-          &:hover {
-            background: var(--color-links);
-            border-color: var(--color-links);
-            color: #fff;
-          }
-        }
-      }
-    }
-  
-    .footer__bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      font-size: 0.85rem;
-  
-      .footer__copy {
-        opacity: 0.7;
-      }
-  
-      .footer__backtotop {
-        text-decoration: none;
-        font-weight: bold;
-        color: var(--color-links);
-        color: var(--color-font);
-        transition: color 0.3s ease;
-  
-        &:hover {
-        }
-      }
-    }
-  }
-  }
-  
-//Desktop
-@media (min-width: 501px) {
+// Mobile-first: Base styles (mobile)
 .footer {
-    width: 90%;
-  background: var(--color-primary);
-  color: var(--color-font);
+  width: 90%;
+  background-color: var(--color-footer-background);
+  color: var(--color-footer-font);
   padding: 4rem 2rem;
   text-align: center;
   position: relative;
   overflow: hidden;
-  margin: 0 auto;
-  margin-top: 2rem;
+  margin: 2rem auto 0;
   border-radius: 8px;
 
   .footer__top {
@@ -105,36 +20,41 @@
       font-size: 0.9rem;
       text-transform: uppercase;
       margin-bottom: 1rem;
-      color: rgba(var(--color-font-rgb), 0.8);
+      color: var(--color-footer-font);
     }
 
     .footer__big-text {
       font-size: 4rem;
       font-weight: 900;
       letter-spacing: 2px;
-      color: rgba(var(--color-font-rgb), 0.08); // blek bakgrundsrubrik
+      color: var(--color-footer-font);
       margin-bottom: 2.5rem;
+      display: inline-block; // gör så att hover bara gäller texten, inte hela containern
+      transition: transform 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        color: var(--color-footer-font-hover-color);
+        transform: scale(1.1);
+      }
     }
 
     .footer__buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      @include flex-wrap-center;
       gap: 1.2rem;
 
       .footer__btn {
         padding: 0.8rem 1.6rem;
-        border: 1px solid var(--color-font);
+        border: 1px solid var(--color-footer-btn-border);
         border-radius: 50px;
         font-size: 0.9rem;
         text-decoration: none;
-        color: var(--color-font);
+        color: var(--color-footer-btn-color);
         transition: all 0.3s ease;
 
         &:hover {
-          background: var(--color-links);
-          border-color: var(--color-links);
-          color: #fff;
+          background-color: var(--color-footer-btn-hover-bg);
+          border-color: var(--color-footer-btn-hover-bg);
+          color: var(--color-footer-btn-hover-color);
         }
       }
     }
@@ -152,18 +72,18 @@
 
     .footer__copy {
       opacity: 0.7;
+      color: var(--color-footer-font);
     }
 
     .footer__backtotop {
       text-decoration: none;
       font-weight: bold;
-      color: var(--color-font);
-      transition: color 0.3s ease;
+      color: var(--color-footer-font);
+      transition: transform 0.3s ease;
 
       &:hover {
-        color: var(--color-links);
+        transform: scale(1.1);
       }
     }
   }
-}
 }

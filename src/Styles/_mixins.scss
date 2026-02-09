@@ -1,0 +1,59 @@
+// Mixins för gemensamma styles
+
+// Button styles
+@mixin button-base {
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  align-items: center;
+}
+
+@mixin button-hover {
+  transform: scale(1.13);
+}
+
+// Image styles
+@mixin image-base {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+@mixin image-circle {
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+}
+
+// Card/Container styles
+@mixin card-base {
+  border-radius: 8px;
+  box-shadow: var(--shadow-default);
+  background-color: var(--color-project-background);
+}
+
+// Flex utilities
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-wrap-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+// Glow effect
+@mixin glow-effect {
+  box-shadow: 
+    0 0 30px rgba(var(--color-header-picture-glow-rgb), 0.8),
+    0 0 60px rgba(var(--color-header-picture-glow-rgb), 0.6),
+    0 0 90px rgba(var(--color-header-picture-glow-rgb), 0.4),
+    0 0 120px rgba(var(--color-header-picture-glow-rgb), 0.2);
+}
+
+

@@ -7,7 +7,7 @@ export const Header = () => {
       <div className="header__content">
         <div className="header__picture">
 <img
-  src={`${import.meta.env.BASE_URL}images/marie_AI_generated.jfif`}
+  src={`${import.meta.env.BASE_URL}images/marie_AI_generated.png`}
   width="800"
   height="602"
   loading="lazy"

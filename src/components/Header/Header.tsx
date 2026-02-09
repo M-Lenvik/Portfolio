@@ -1,7 +1,41 @@
 //components/Header.tsx
+import { useState, useEffect } from 'react';
 import './Header.scss';
 
 export const Header = () => {
+  const [displayedText, setDisplayedText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const texts = ['Frontend developer', 'UX designer', 'Design passioned'];
+
+  useEffect(() => {
+    const currentText = texts[currentIndex];
+    const speed = isDeleting ? 50 : 100; // Snabbare när den raderar
+
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        // Skriver ut bokstav för bokstav
+        if (displayedText.length < currentText.length) {
+          setDisplayedText(currentText.slice(0, displayedText.length + 1));
+        } else {
+          // Vänta lite innan radering börjar
+          setTimeout(() => setIsDeleting(true), 2000);
+        }
+      } else {
+        // Raderar bokstav för bokstav
+        if (displayedText.length > 0) {
+          setDisplayedText(displayedText.slice(0, -1));
+        } else {
+          // Byt till nästa text
+          setIsDeleting(false);
+          setCurrentIndex((prev) => (prev + 1) % texts.length);
+        }
+      }
+    }, speed);
+
+    return () => clearTimeout(timeout);
+  }, [displayedText, currentIndex, isDeleting]);
+
   return (
     <header className="header" id='header'>
       <div className="header__content">
@@ -16,7 +50,8 @@ export const Header = () => {
         </div>
 
         <div className="header__name">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -20 493.32 100">
+          <h1>marie lenvik</h1>
+          {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -20 493.32 100">
             <g>
               <path
                 className="cls-1"
@@ -65,9 +100,10 @@ export const Header = () => {
                 d="M451.79,34.42l-8.93,8.21v10.8h-5.11V0h5.11v36.22l22.61-20.66h6.34l-16.2,15.48,17.71,22.39h-6.26l-15.26-19.01Z"
               />
             </g>
-          </svg>
+          </svg> */}
+          
           <h2 className="header__description">
-            Frontend developer & UX designer
+            {displayedText}
           </h2>
         </div>
       </div>

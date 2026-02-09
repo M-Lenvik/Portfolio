@@ -57,12 +57,19 @@ header {
       margin-left: 1em;
       padding-bottom: 0.5rem;
       
+      h1 {
+        margin: 0;
+        color: var(--color-header-h1);
+        font-size: 7em;
+      }
+      
       .header__description {
         margin-top: 0.25rem;
         max-width: 18ch;
         text-align: right;
         padding-right: 1.5rem;
-        color: var(--color-header-headings);
+        color: var(--color-header-h2);
+        min-height: 1.5em; // Förhindrar att h1 hoppar när texten ändras
       }
     }
   }

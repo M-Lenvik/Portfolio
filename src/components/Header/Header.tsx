@@ -1,52 +1,21 @@
 //components/Header.tsx
-import { useState, useEffect } from 'react';
+import { useTypewriter } from '../../hooks/useTypewriter';
 import './Header.scss';
 
 export const Header = () => {
-  const [displayedText, setDisplayedText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const texts = ['Frontend developer', 'UX designer', 'Design passioned'];
-
-  useEffect(() => {
-    const currentText = texts[currentIndex];
-    const speed = isDeleting ? 50 : 100; // Snabbare när den raderar
-
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        // Skriver ut bokstav för bokstav
-        if (displayedText.length < currentText.length) {
-          setDisplayedText(currentText.slice(0, displayedText.length + 1));
-        } else {
-          // Vänta lite innan radering börjar
-          setTimeout(() => setIsDeleting(true), 2000);
-        }
-      } else {
-        // Raderar bokstav för bokstav
-        if (displayedText.length > 0) {
-          setDisplayedText(displayedText.slice(0, -1));
-        } else {
-          // Byt till nästa text
-          setIsDeleting(false);
-          setCurrentIndex((prev) => (prev + 1) % texts.length);
-        }
-      }
-    }, speed);
-
-    return () => clearTimeout(timeout);
-  }, [displayedText, currentIndex, isDeleting]);
+  const displayedText = useTypewriter(); /*hook for typewriter effect*/
 
   return (
     <header className="header" id='header'>
       <div className="header__content">
         <div className="header__picture">
-<img
-  src={`${import.meta.env.BASE_URL}images/marie_AI_generated.png`}
-  width="800"
-  height="602"
-  loading="lazy"
-  alt="Marie Lenvik, AI genererat svartvitt porträtt"
-/>
+          <img
+            src={`${import.meta.env.BASE_URL}images/marie_AI_generated.png`}
+            width="800"
+            height="602"
+            loading="lazy"
+            alt="Marie Lenvik, AI genererat svartvitt porträtt"
+          />
         </div>
 
         <div className="header__name">
@@ -103,7 +72,7 @@ export const Header = () => {
           </svg> */}
           
           <h2 className="header__description">
-            {displayedText}
+            {displayedText} {/*hook for typewriter effect*/}
           </h2>
         </div>
       </div>

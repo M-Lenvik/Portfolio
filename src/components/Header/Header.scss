@@ -3,93 +3,95 @@
 
 // Mobile-first: Base styles (mobile)
 header {
-  display: flex;
-  background-color: var(--color-header-background);
-  
-  .header__content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    gap: 1rem;
-  
-    .header__picture {
-      order: 2;
-      flex-shrink: 0;
-      width: 40%;
-      margin-top: -1rem;
-      position: relative;
-
-      img {
-        @include image-base;
-        //@include image-circle;
-        border-radius: 50%;
-        position: relative;
-        padding: 1em;
-        z-index: 1;
-      }
-      
-      // Bakgrundsfärg bakom bilden med glödande effekt
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: var(--color-header-picture-bg);
-        // border-radius: horisontella radier / vertikala radier
-        // Horisontella (före /): top-left 60%, top-right 40%, bottom-right 30%, bottom-left 70%
-        // Vertikala (efter /): top-left 60%, top-right 30%, bottom-right 70%, bottom-left 40%
-        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-        z-index: 0;
-        @include glow-effect;
-      }
-    }
-    
-    .header__name {
-      order: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      width: 100%;
-      margin: 0;
-      margin-left: 1em;
-      padding-bottom: 0.5rem;
-      
-      h1 {
-        margin: 0;
-        color: var(--color-header-h1);
-        font-size: 7em;
-      }
-      
-      .header__description {
-        margin-top: 0.25rem;
-        max-width: 18ch;
-        text-align: right;
-        padding-right: 1.5rem;
-        color: var(--color-header-h2);
-        min-height: 1.5em; // Förhindrar att h1 hoppar när texten ändras
-      }
-    }
-  }
+  display: none; // Dölj header helt på mobil
 }
 
-// Desktop: min-width 501px
+// Tablet: min-width 501px
 @media (min-width: 501px) {
   header {
+    display: flex;
+    background-color: var(--color-header-background);
+    
     .header__content {
+      display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 3rem;
-      padding-right: 2rem;
+      gap: 2rem;
+      padding-right: 1.5rem;
+      width: 100%;
 
       .header__picture {
         order: 0;
         width: auto;
         margin-top: 0;
-        
+        position: relative;
+
         img {
+          @include image-base;
+          border-radius: 50%;
+          position: relative;
+          padding: 0.8em;
+          z-index: 1;
+          width: 250px;
+        }
+        
+        // Bakgrundsfärg bakom bilden med glödande effekt
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 250px;
+          height: 250px;
+          background-color: var(--color-header-picture-bg);
+          // border-radius: horisontella radier / vertikala radier
+          // Horisontella (före /): top-left 60%, top-right 40%, bottom-right 30%, bottom-left 70%
+          // Vertikala (efter /): top-left 60%, top-right 30%, bottom-right 70%, bottom-left 40%
+          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+          z-index: 0;
+          @include glow-effect;
+        }
+      }
+
+      .header__name {
+        order: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+        margin: 0;
+        padding-bottom: 0.5rem;
+        
+        h1 {
+          margin: 0;
+          color: var(--color-header-h1);
+          font-size: 4em;
+        }
+        
+        .header__description {
+          margin-top: 0.25rem;
+          max-width: 18ch;
+          text-align: right;
+          padding-right: 1.5rem;
+          color: var(--color-header-h2);
+          min-height: 1.5em; // Förhindrar att h1 hoppar när texten ändras
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+}
+
+// Desktop: min-width 1024px
+@media (min-width: 1024px) {
+  header {
+    .header__content {
+      gap: 3rem;
+      padding-right: 2rem;
+
+      .header__picture {
+        img {
+          padding: 1em;
           width: 350px;
         }
         
@@ -100,7 +102,15 @@ header {
       }
 
       .header__name {
-        order: 0;
+        h1 {
+          font-size: 5em;
+        }
+        
+        .header__description {
+          padding-right: 1.5rem;
+          font-size: 2.5em;
+          min-height: 1.5em; // Förhindrar att h1 hoppar när texten ändras
+        }
       }
     }
   }

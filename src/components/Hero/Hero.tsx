@@ -1,11 +1,32 @@
 //components/Hero.tsx
+import { useTypewriter } from '../../hooks/useTypewriter';
 import './Hero.scss';
 
 export const Hero = () => {
+  const displayedText = useTypewriter(); /*hook for typewriter effect*/
+
   return (
     <section className="hero">
-      {/* <h1 className="hero__title">Welcome to My Portfolio</h1> */}
       <div className="hero__content">
+        {/* Mobile: Bild, h1, h2 */}
+        <div className="header__intro-mobile">
+          <div className="header__picture-mobile">
+            <img
+              src={`${import.meta.env.BASE_URL}images/marie_AI_generated.png`}
+              width="800"
+              height="602"
+              loading="lazy"
+              alt="Marie Lenvik, AI genererat svartvitt porträtt"
+            />
+          </div>
+          <div className="header__name-mobile">
+            <h1>marie lenvik</h1>
+            <h2 className="header__description-mobile">
+              {displayedText} {/*hook for typewriter effect*/}
+            </h2>
+          </div>
+        </div>
+
         <div className="hero__description">
           <p>
 
@@ -25,10 +46,6 @@ export const Hero = () => {
           </p>
           */}
           </p>
-
-        <p style={{ fontSize: '0.8rem', fontWeight: 'bold', marginTop: '1em' }}>
-          Observera att min portfolio är under uppbyggnad och att jag inte är färdig med att skriva clean code, responsivitet, och tillgänglighet. Inte heller stylingen är helt klar.
-        </p>
 
         </div>
 {/*

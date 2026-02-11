@@ -14,8 +14,70 @@
     flex-direction: column;
     width: 100%;
 
+    // Mobile: Introduktionssektion med bild, h1, h2 (för desktop ligger detta i header)
+    .header__intro-mobile {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+      position: relative;
+
+      .header__picture-mobile {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        z-index: 1;
+
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 50%;
+          position: relative;
+          z-index: 1;
+          padding: 0.5em;
+        }
+
+        // Bakgrundsfärg bakom bilden med glödande effekt
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100px;
+          height: 100px;
+          background-color: var(--color-header-picture-bg);
+          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+          z-index: 0;
+          @include glow-effect;
+        }
+      }
+
+      .header__name-mobile {
+        padding-left: 120px; // Ger plats för bilden
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+          margin: 0;
+          color: var(--color-header-h1);
+          font-size: 3em;
+        }
+
+        .header__description-mobile {
+          margin-top: 0.25rem;
+          color: var(--color-header-h2);
+          min-height: 1.5em;
+          font-size: 1.2em;
+        }
+      }
+    }
+
     .hero__description {
       text-align: left;
+      position: relative;
+      padding-left: 0; // Text börjar längst till vänster
+      margin-top: 1rem;
 
       p {
         margin-bottom: 1em;
@@ -44,14 +106,20 @@
     .hero__content {
       flex-direction: row;
 
+      // Dölj mobile-intro på desktop
+      .header__intro-mobile {
+        display: none;
+      }
+
+      .hero__description {
+        padding-left: 0; // Ta bort padding på desktop
+        padding-right: 1rem;
+      }
+
       .hero__description,
       .hero__picture {
         width: 100%;
         box-sizing: border-box;
-      }
-
-      .hero__description {
-        padding-right: 1rem;
       }
 
       .hero__picture {

@@ -6,7 +6,7 @@ export const Hero = () => {
   const displayedText = useTypewriter(); /*hook for typewriter effect*/
 
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
       <div className="hero__content">
         {/* Mobile: Bild, h1, h2 */}
         <div className="header__intro-mobile">

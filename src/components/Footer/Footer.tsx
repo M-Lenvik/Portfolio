@@ -2,7 +2,7 @@ import './Footer.scss';
 
 export const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" id="footer">
       <div className="footer__top">
         <p className="footer__question">Vill du veta mer om mig?</p>
         <h2 className="footer__big-text">Kontakta mig</h2>

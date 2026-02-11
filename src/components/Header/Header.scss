@@ -1,13 +1,14 @@
 @use '../../Styles/color' as *;
 @use '../../Styles/mixins' as *;
+@use '../../Styles/breakpoints' as *;
 
 // Mobile-first: Base styles (mobile)
 header {
   display: none; // Dölj header helt på mobil
 }
 
-// Tablet: min-width 501px
-@media (min-width: 501px) {
+// Tablet
+@include tablet {
   header {
     display: flex;
     background-color: var(--color-header-background);
@@ -82,8 +83,8 @@ header {
   }
 }
 
-// Desktop: min-width 1024px
-@media (min-width: 1024px) {
+// Desktop
+@include desktop {
   header {
     .header__content {
       gap: 3rem;

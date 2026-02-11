@@ -1,0 +1,36 @@
+// Breakpoints for responsive design
+
+// Mobile-first approach
+// Base styles: mobile (0px - 500px)
+// Tablet: 501px - 1023px
+// Desktop: 1024px+
+
+$breakpoint-mobile-max: 500px;
+$breakpoint-tablet-min: 501px;
+$breakpoint-desktop-min: 1024px;
+
+// Media query mixins
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile-max) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $breakpoint-tablet-min) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop-min) {
+    @content;
+  }
+}
+
+@mixin tablet-and-below {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+

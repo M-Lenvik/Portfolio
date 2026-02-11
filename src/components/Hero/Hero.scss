@@ -1,5 +1,6 @@
 @use '../../Styles/color' as *;
 @use '../../Styles/mixins' as *;
+@use '../../Styles/breakpoints' as *;
 
 // Mobile-first: Base styles (mobile)
 .hero {
@@ -96,8 +97,8 @@
   }
 }
 
-// Desktop: min-width 501px
-@media (min-width: 501px) {
+// Tablet and up
+@include tablet {
   .hero {
     padding: 0.5rem;
     width: 90%;

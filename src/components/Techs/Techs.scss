@@ -1,5 +1,6 @@
 @use '../../Styles/color' as *;
 @use '../../Styles/mixins' as *;
+@use '../../Styles/breakpoints' as *;
 
 // Mobile-first: Base styles (mobile)
 .techs {
@@ -47,8 +48,8 @@
   }
 }
 
-// Desktop: min-width 501px
-@media (min-width: 501px) {
+// Tablet and up
+@include tablet {
   .techs {
     width: 90%;
 

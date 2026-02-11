@@ -1,5 +1,6 @@
 @use '../../Styles/color' as *;
 @use '../../Styles/mixins' as *;
+@use '../../Styles/breakpoints' as *;
 
 // Mobile-first: Base styles (mobile)
 .project-card {
@@ -8,7 +9,6 @@
   width: 95%;
   margin: 2rem auto 0;
   padding: 1rem;
-  gap: 2rem;
   border: 1px solid var(--shadow-project-border);
   box-shadow: var(--shadow-project);
   @include card-base;
@@ -17,16 +17,45 @@
     padding: 0.5em;
     display: flex;
     flex-direction: column;
-    height: fit-content;
-    overflow: hidden;
 
     .project-card__title {
       color: var(--color-project-headings);
     }
 
+    .project-card__descriptions {
+      p {
+        margin-top: 1em;
+        color: var(--color-project-font);
+      }
+    }
+
+    .project-card__images {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      
+      .project-card__images-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+      
+      .project-card__image {
+        max-width: 100%;
+        max-height: 70vh;
+        @include image-base;
+        object-fit: cover;
+      }
+      
+      video.project-card__image {
+        max-height: 70vh;
+        object-fit: cover;
+      }
+    }
+
     .project-card__techs {
       @include flex-wrap-center;
-      margin-top: 2rem;
+      margin-top: 0;
       
       .project-card__tech {
         @include tech-badge;
@@ -42,64 +71,57 @@
         @include project-button;
       }
     }
-
-    .project-card__descriptions {
-      p {
-        margin-top: 1em;
-        color: var(--color-project-font);
-      }
-    }
-  }
-
-  .project-card__images {
-    display: flex;
-    flex-direction: column;
-    
-    .project-card__images-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-    
-    .project-card__image {
-      max-width: 100%;
-      max-height: 70vh;
-      @include image-base;
-      object-fit: cover;
-    }
-    
-    video.project-card__image {
-      max-height: 70vh;
-      object-fit: cover;
-    }
   }
 }
 
-// Desktop: min-width 501px
-@media (min-width: 501px) {
+// Desktop
+@include desktop {
   .project-card {
     flex-direction: row;
     width: min(90%, 1200px);
     margin: 6rem auto 0;
-
-    .project-card__content,
-    .project-card__images {
-      flex: 0 0 calc(50% - 1rem);
-      min-width: 0;
-    }
+    position: relative;
 
     .project-card__content {
       padding: 1.5em;
-    }
-
-    .project-card__images {
-      align-self: flex-start;
-      overflow: hidden;
-
-      .project-card__images-wrapper {
-        flex-direction: column;
+      flex: 0 0 calc(50% - 1rem);
+      min-width: 0;
+      
+      // Flytta bilderna ut från content på desktop med position absolute
+      .project-card__images {
+        position: absolute;
+        left: calc(50% + 1rem);
+        top: 0;
+        width: calc(50% - 1rem);
+        margin: 0;
         overflow: hidden;
+
+        .project-card__images-wrapper {
+          flex-direction: column;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+
+// Se till att desktop-stilarna inte läcker igenom på mobil/tablet
+@include tablet-and-below {
+  .project-card {
+    flex-direction: column;
+    position: static;
+    
+    .project-card__content {
+      flex: none;
+      width: 100%;
+      
+      .project-card__images {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: auto;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
       }
     }
   }

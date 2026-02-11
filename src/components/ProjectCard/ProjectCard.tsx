@@ -24,7 +24,7 @@ export const ProjectCard = ({
 
   useEffect(() => {
     const matchHeights = () => {
-      if (contentRef.current && imagesRef.current && window.innerWidth >= 501) {
+      if (contentRef.current && imagesRef.current && window.innerWidth >= 1024) {
         const contentHeight = contentRef.current.offsetHeight;
         imagesRef.current.style.maxHeight = `${contentHeight}px`;
       } else if (imagesRef.current) {
@@ -61,6 +61,39 @@ export const ProjectCard = ({
         ></p>
         </div>
 
+        {/* Bilder / Video - Mobile: efter text, före techs */}
+        <div className="project-card__images" ref={imagesRef}>
+          <div className="project-card__images-wrapper">
+          {video ? (
+            <video
+              src={video}
+              controls
+              autoPlay
+              loop
+              muted
+              className="project-card__image"
+            />
+          ) : Array.isArray(images) && images.length ? (
+            images.map((src, index) => (
+              <img
+                key={index}
+                src={src}
+                alt={`${title} bild ${index + 1}`}
+                className="project-card__image"
+                loading="lazy"
+              />
+            ))
+          ) : image ? (
+            <img
+              src={image}
+              alt={title.replace(/<br>/g, ' ')}
+              className="project-card__image"
+              loading="lazy"
+            />
+          ) : null}
+          </div>
+        </div>
+
         {/* Tekniker */}
         <div className="project-card__techs">
           {tech.map((techItem, index) => (
@@ -92,39 +125,6 @@ export const ProjectCard = ({
               <i className="fa-solid fa-globe"></i> Live demo
             </a>
           )}
-        </div>
-      </div>
-
-      {/* Bilder / Video */}
-      <div className="project-card__images" ref={imagesRef}>
-        <div className="project-card__images-wrapper">
-        {video ? (
-          <video
-            src={video}
-            controls
-            autoPlay
-            loop
-            muted
-            className="project-card__image"
-          />
-        ) : Array.isArray(images) && images.length ? (
-          images.map((src, index) => (
-            <img
-              key={index}
-              src={src}
-              alt={`${title} bild ${index + 1}`}
-              className="project-card__image"
-              loading="lazy"
-            />
-          ))
-        ) : image ? (
-          <img
-            src={image}
-            alt={title.replace(/<br>/g, ' ')}
-            className="project-card__image"
-            loading="lazy"
-          />
-        ) : null}
         </div>
       </div>
     </div>

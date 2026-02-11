@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 export const useSmoothScroll = () => {
   useEffect(() => {
     let isScrolling = false;
-    let scrollEndTimeout: NodeJS.Timeout;
+    let scrollEndTimeout: ReturnType<typeof setTimeout>;
     let lastCheckTime = 0;
     let wheelAccumulator = 0;
 

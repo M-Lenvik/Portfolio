@@ -20,17 +20,7 @@
   border-radius: 8px;
 }
 
-@mixin image-circle {
-  border-radius: 50%;
-  border: 2px solid var(--color-border);
-}
 
-// Card/Container styles
-@mixin card-base {
-  border-radius: 8px;
-  box-shadow: var(--shadow-default);
-  background-color: var(--color-project-background);
-}
 
 // Flex utilities
 @mixin flex-center {
@@ -47,13 +37,5 @@
   gap: 1em;
 }
 
-// Glow effect
-@mixin glow-effect {
-  box-shadow: 
-    0 0 30px rgba(var(--color-header-picture-glow-rgb), 0.8),
-    0 0 60px rgba(var(--color-header-picture-glow-rgb), 0.6),
-    0 0 90px rgba(var(--color-header-picture-glow-rgb), 0.4),
-    0 0 120px rgba(var(--color-header-picture-glow-rgb), 0.2);
-}
 
 

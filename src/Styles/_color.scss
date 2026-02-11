@@ -68,13 +68,25 @@
     --color-tech-background: #304050;
 
     // Project colors
-    --color-project-headings: #F28241;
-    --color-project-font: #F28241;
-    --color-project-background: #304050;
+    --color-project-headings: #D87D64;
+    --color-project-font: #F4B7AB;
+    --color-project-background: #263747;
     --shadow-project-border: #B2421F;
+    --shadow-project: 0 2px 12px rgba(178, 66, 31, 0.7), 0 -4px 8px rgba(178, 66, 31, 0.5), 0 4px 12px rgba(178, 66, 31, 0.3), 0 8px 24px rgba(178, 66, 31, 0.25);
+//    --shadow-project: 0 8px 12px rgba(178, 66, 31, 0.6), 0 8px 24px rgba(178, 66, 31, 0.2), 0 24px 60px rgba(178, 66, 31, 0.15);
+//    --shadow-project: 0 12px 20px rgba(178, 66, 31, 0.6), 0 16px 40px rgba(178, 66, 31, 0.3), 0 24px 60px rgba(178, 66, 31, 0.15);
+    // Första lagret: närmare, mörkare skugga (12px offset, 20px blur, 60% opacitet)
+    // Andra lagret: medel, mjuk skugga (16px offset, 40px blur, 30% opacitet)
+    // Tredje lagret: längre, ljusare skugga (24px offset, 60px blur, 15% opacitet) - ger stark lyft-effekt runt om hela kortet
 
-    --color-project-tech: #590823;
-    --color-project-tech-font: #ffffff;
+    --color-project-tech: #304050;
+    --color-project-tech-font: #f2e9e4;
+    --shadow-project-button-border: 4px 4px 4px 0px #F4B7AB;
+    --color-project-button: #BF533B;
+    --color-project-button-font: #ffffff;
+    --color-project-button-border: #BF533B;
+    --color-project-button-hover: #D87D64;
+    --color-project-button-hover-font: #ffffff;
 
     // Footer colors
     --color-footer-background: #304050;
@@ -114,10 +126,63 @@
   }
 
   /*
-
+  
   #BEC7CE - Ljusblå
   #304050 - Blå
   #B2421F - Orange
   #D87D64 - Laxrosa
   #F4B7AB - Ljusrosa
   */
+
+// Mixins för färgrelaterad styling
+
+// Glow effect
+@mixin glow-effect {
+  box-shadow: 
+    0 0 30px rgba(var(--color-header-picture-glow-rgb), 0.8),
+    0 0 60px rgba(var(--color-header-picture-glow-rgb), 0.6),
+    0 0 90px rgba(var(--color-header-picture-glow-rgb), 0.4),
+    0 0 120px rgba(var(--color-header-picture-glow-rgb), 0.2);
+}
+
+// Tech badge styles (matching Techs component)
+@mixin tech-badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  white-space: nowrap;
+  box-shadow: var(--shadow-default);
+  color: var(--color-secondary);
+  background-color: var(--color-tech);
+  border: 1px solid var(--color-border);
+  margin-bottom: 0.2rem;
+}
+
+// Project button styles (orange/red accent with better contrast)
+@mixin project-button {
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  color: var(--color-project-button-font);
+  background-color: var(--color-project-button);
+  border: 1px solid var(--color-project-button-border);
+  box-shadow: var(--shadow-project-button-border);
+  
+  &:hover {
+    background-color: var(--color-project-button-hover);
+    color: var(--color-project-button-hover-font);
+    transform: scale(1.05);
+  }
+}
+
+// Card/Container styles
+@mixin card-base {
+  border-radius: 8px;
+  background-color: var(--color-project-background);
+}
+
+// Image circle with border
+@mixin image-circle {
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+}

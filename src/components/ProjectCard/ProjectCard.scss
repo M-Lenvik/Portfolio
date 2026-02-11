@@ -10,6 +10,7 @@
   padding: 1rem;
   gap: 2rem;
   border: 1px solid var(--shadow-project-border);
+  box-shadow: var(--shadow-project);
   @include card-base;
 
   .project-card__content {
@@ -28,10 +29,7 @@
       margin-top: 2rem;
       
       .project-card__tech {
-        @include button-base;
-        background-color: var(--color-project-tech);
-        color: var(--color-project-tech-font);
-        box-shadow: var(--shadow-project-border);
+        @include tech-badge;
       }
     }
     
@@ -41,14 +39,7 @@
       margin-top: 1rem;
       
       a {
-        @include button-base;
-        color: var(--color-button-font);
-        background-color: var(--color-button);
-        
-        &:hover {
-          @include button-hover;
-          background-color: var(--color-button-hover);
-        }
+        @include project-button;
       }
     }
 

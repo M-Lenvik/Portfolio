@@ -67,6 +67,7 @@ header {
           margin: 0;
           color: var(--color-header-h1);
           font-size: 4em;
+          text-align: right; // Högerställer texten
         }
         
         .header__description {
@@ -88,7 +89,7 @@ header {
   header {
     .header__content {
       gap: 3rem;
-      padding-right: 2rem;
+      justify-content: center; // Centrerar bild och text tillsammans
 
       .header__picture {
         img {
@@ -103,8 +104,11 @@ header {
       }
 
       .header__name {
+        width: auto; // Låter texten ta bara det utrymme den behöver
+        
         h1 {
           font-size: 5em;
+          text-align: right; // Högerställer texten
         }
         
         .header__description {
@@ -112,6 +116,22 @@ header {
           font-size: 2.5em;
           min-height: 1.5em; // Förhindrar att h1 hoppar när texten ändras
         }
+      }
+    }
+  }
+}
+
+// Large screens (1200px and above)
+@media (min-width: 1200px) {
+  header {
+    .header__content {
+      gap: 13rem; // Fast avstånd mellan bild och text
+      justify-content: center; // Centrerar bild och text tillsammans, ytterkanterna anpassar sig automatiskt
+      align-items: center; // Centrerar bilden och texten vertikalt
+      
+      .header__name {
+        width: auto; // Låter texten ta bara det utrymme den behöver
+        flex: 0 1 auto; // Förhindrar att den expanderar
       }
     }
   }

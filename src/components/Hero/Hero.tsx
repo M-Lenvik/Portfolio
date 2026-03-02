@@ -28,24 +28,17 @@ export const Hero = () => {
         </div>
 
         <div className="hero__description">
+         {/*
           <p>
-
-          Jag är student inom frontend utveckling och söker LIA plats till
-          hösten 2025. Under utbildningen har jag byggt en grund inom JavaScript, TypeScript, HTML, CSS/SCSS och har även arbetat med Vue och React. 
-          Jag har testat på backend med Node.js, Express och SQL, men mitt hjärta ligger i frontend och i att skapa användarvänliga, tillgängliga och visuellt tilltalande lösningar. <br />
-          Under min praktikperiod hoppas jag få en djupare insikt i front end där jag kan utvecklas med erfarna kollegor.
+            Junior frontend utvecklare mer hjärta i att skapa användarvänliga, tillgängliga och visuellt tilltalande lösningar.
           </p>
           <p>
-
-          Vidare på denna sida presenterar jag de projekt jag arbetat med i mina
-          studier på Medieinstitutet.
-         {/*
           <p>
           Om du är intresserad av att se närmre på min utbildning får du gärna
           läsa mitt CV.
           </p>
-          */}
           </p>
+          */}
 
         </div>
 {/*

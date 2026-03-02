@@ -37,5 +37,34 @@
   gap: 1em;
 }
 
+// Custom tooltip: apply on a parent that contains an element with class .tooltip
+@mixin tooltip {
+  position: relative;
+
+  .tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 0.35rem;
+    padding: 0.25rem 0.5rem;
+    background: var(--color-tooltip-bg);
+    color: var(--color-tooltip-text);
+    border-radius: 4px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    pointer-events: none;
+    z-index: 10;
+    box-shadow: var(--shadow-tooltip);
+  }
+
+  &:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 
 

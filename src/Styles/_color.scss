@@ -67,6 +67,11 @@
     --color-tech: #304050;
     --color-tech-background: #304050;
 
+    // Tooltip (helper)
+    --color-tooltip-bg: #2d2d2d;
+    --color-tooltip-text: #f2e9e4;
+    --shadow-tooltip: 4px 4px 4px 0px #4a4e69;
+
     // Project colors
     --color-project-headings: #D87D64;
     --color-project-font: #F4B7AB;
@@ -103,7 +108,7 @@
 
     --color-headings: #BF533B;
     --color-headings-secondary: #bb5823;
-  
+
     /* Neutrala färger */
     --color-button: #BF533B;
     --color-button-hover: #590823;

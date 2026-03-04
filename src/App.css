@@ -47,6 +47,12 @@ html {
   #root {
     max-width: 1580px;
     margin: 0 auto;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  #root {
     padding: 2rem;
   }
 }

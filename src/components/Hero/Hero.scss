@@ -115,8 +115,10 @@
 @include tablet {
   .hero {
     padding: 0.5rem;
-    width: 90%;
-    margin-left: 5%;
+    width: 95%;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
 
     .hero__content {
       flex-direction: row;

@@ -1,11 +1,6 @@
-//components/ProjectCard.tsx
-
-//import "./ProjectCard.scss";
-//components/ProjectCard.tsx
-//import "./ProjectCard.scss";
-// components/ProjectCard.tsx
 import { useEffect, useRef } from 'react';
 import './ProjectCard.scss';
+import { Carousel } from '../Carousel/Carousel';
 import type { ProjectCardProps } from '../../types';
 
 export const ProjectCard = ({
@@ -26,20 +21,26 @@ export const ProjectCard = ({
     const matchHeights = () => {
       if (contentRef.current && imagesRef.current && window.innerWidth >= 1024) {
         const contentHeight = contentRef.current.offsetHeight;
-        imagesRef.current.style.maxHeight = `${contentHeight}px`;
+        const imagesWidth = imagesRef.current.offsetWidth;
+        // Kvadratisk storlek, men aldrig högre än texten till vänster
+        const size = Math.min(contentHeight, imagesWidth);
+        imagesRef.current.style.height = `${size}px`;
+        imagesRef.current.style.maxHeight = `${size}px`;
       } else if (imagesRef.current) {
+        imagesRef.current.style.height = '';
         imagesRef.current.style.maxHeight = '';
       }
     };
 
-    matchHeights();
-    window.addEventListener('resize', matchHeights);
-    return () => window.removeEventListener('resize', matchHeights);
+    const runAfterLayout = () => requestAnimationFrame(matchHeights);
+    runAfterLayout();
+    window.addEventListener('resize', runAfterLayout);
+    return () => window.removeEventListener('resize', runAfterLayout);
   }, [title, description, tech_description, tech]);
 
   return (
-    <div className="project-card" id='project-card'>
-      {/* Innehåll */}
+    <div className="project-card" id="project-card">
+      {/*Innehåll*/}
       <div className="project-card__content" ref={contentRef}>
         <h3
           className="project-card__title"
@@ -73,16 +74,19 @@ export const ProjectCard = ({
               muted
               className="project-card__image"
             />
-          ) : Array.isArray(images) && images.length ? (
-            images.map((src, index) => (
-              <img
-                key={index}
-                src={src}
-                alt={`${title} bild ${index + 1}`}
-                className="project-card__image"
-                loading="lazy"
-              />
-            ))
+          ) : Array.isArray(images) && images.length > 1 ? (
+            <Carousel
+              images={images}
+              altPrefix={title.replace(/<br>/g, ' ')}
+              imageClassName="project-card__image"
+            />
+          ) : Array.isArray(images) && images.length === 1 ? (
+            <img
+              src={images[0]}
+              alt={title.replace(/<br>/g, ' ')}
+              className="project-card__image"
+              loading="lazy"
+            />
           ) : image ? (
             <img
               src={image}

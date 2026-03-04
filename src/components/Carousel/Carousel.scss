@@ -1,0 +1,146 @@
+@use '../../Styles/color' as *;
+@use '../../Styles/mixins' as *;
+@use '../../Styles/breakpoints' as *;
+
+// Mobile-first: enkel layout med tydlig höjd
+.carousel {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+
+  &__track {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    min-height: 280px;
+    perspective: 1000px;
+  }
+
+  &__rotation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    overflow: visible;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease, visibility 0s 0.5s;
+    transform-origin: center center;
+    backface-visibility: hidden;
+    visibility: hidden;
+
+    &--active {
+      transform: rotateY(0deg);
+      visibility: visible;
+      z-index: 2;
+      transition: transform 0.5s ease, visibility 0s 0s;
+    }
+
+    &--prev {
+      transform: rotateY(-90deg);
+      z-index: 1;
+    }
+
+    &--next {
+      transform: rotateY(90deg);
+      z-index: 1;
+    }
+  }
+
+  &__rotation img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    backface-visibility: hidden;
+    border-radius: 8px;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--color-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.7);
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    &--prev {
+      left: 0.5rem;
+    }
+
+    &--next {
+      right: 0.5rem;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  &__dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    &--active {
+      background: var(--color-project-headings);
+    }
+  }
+}
+
+// Tablet och uppåt: extra luft över prickarna
+@include tablet {
+  .carousel {
+    &__dots {
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+// Desktop (1024px+): befintlig layout, fyller tillgängligt utrymme
+@include desktop {
+  .carousel {
+    height: 100%;
+    min-height: 0;
+    align-items: stretch;
+    overflow: visible;
+
+    &__track {
+      flex: 1 1 0;
+      min-height: 0;
+    }
+  }
+}

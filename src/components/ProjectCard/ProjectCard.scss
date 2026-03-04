@@ -37,19 +37,49 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: center;
         gap: 1rem;
+        overflow: visible;
+
+        // Karusell: ta full bredd, mer höjd för bilderna
+        &:has(.carousel) {
+          flex-direction: column;
+          width: 100%;
+          min-height: 420px;
+          
+          .carousel {
+            width: 100%;
+            flex: 1;
+            min-height: 0;
+            overflow: visible;
+          }
+          
+          .project-card__image {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            max-height: 100%;
+            object-fit: contain;
+          }
+        }
       }
-      
+
       .project-card__image {
+        width: auto;
+        height: auto;
         max-width: 100%;
         max-height: 70vh;
         @include image-base;
-        object-fit: cover;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+        flex: 0 1 auto;
+        align-self: center;
+        padding: 10px;
       }
-      
+
       video.project-card__image {
         max-height: 70vh;
-        object-fit: cover;
+        object-fit: contain;
       }
     }
 
@@ -81,26 +111,83 @@
     width: min(90%, 1200px);
     margin: 6rem auto 0;
     position: relative;
+    overflow: visible;
 
     .project-card__content {
       padding: 1.5em;
       flex: 0 0 calc(50% - 1rem);
       min-width: 0;
+      overflow: visible;
       
       // Flytta bilderna ut från content på desktop med position absolute
       .project-card__images {
         position: absolute;
         left: calc(50% + 1rem);
-        top: 0;
+        top: 50%;
+        transform: translateY(-50%);
         width: calc(50% - 1rem);
         margin: 0;
-        overflow: hidden;
+        overflow: visible;
+        z-index: 1;
 
-        .project-card__images-wrapper {
-          flex-direction: column;
-          overflow: hidden;
+      .project-card__images-wrapper {
+        flex-direction: column;
+        overflow: visible;
+        height: 100%;
+        min-height: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:has(.carousel) {
+          align-items: stretch;
+          justify-content: flex-start;
+          min-height: 0;
+        }
+
+          .project-card__image {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 70vh; // grundläge, kan växa på hover
+            object-fit: contain;
+            flex: 0 1 auto;
+            min-height: 0;
+            position: relative;
+            transition: height 0.3s ease, max-height 0.3s ease, transform 0.3s ease;
+            transform-origin: center center;
+            align-self: center;
+            will-change: transform, max-height, height;
+          }
+
+          video.project-card__image {
+            object-fit: contain;
+          }
         }
       }
+    }
+
+    // Vid hover: låt bilden växa upp till full höjd (100vh) och ligga överst
+    .project-card__image:hover {
+      height: 100vh;
+      max-height: 100vh;
+      width: auto;
+      z-index: 1000;
+      transform: scale(1.5);
+    }
+
+    // Karusell – bilder fyller hela området; overflow: visible så hover-zoom kan sticka ut
+    .project-card__images-wrapper .carousel {
+      overflow: visible;
+    }
+    .project-card__images-wrapper .carousel .carousel__rotation img.project-card__image {
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+      flex: 1 1 0;
+      align-self: stretch;
+      object-fit: contain;
+      border-radius: 8px;
     }
   }
 }
@@ -110,10 +197,14 @@
   .project-card {
     flex-direction: column;
     position: static;
+    width: 95%;
+    margin: 2rem auto 0;
+    padding: 1rem;
     
     .project-card__content {
       flex: none;
       width: 100%;
+      padding: 0.5em;
       
       .project-card__images {
         position: relative;

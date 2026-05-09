@@ -155,7 +155,7 @@ export const projects = [
       `${import.meta.env.BASE_URL}images/Result_Page_1.jpg`,
       `${import.meta.env.BASE_URL}images/Result_Page_2.jpg`
     ],
-    github: 'https://github.com/M-Lenvik/First-CSS-project-Pixel-Perfec',
+    github: 'https://github.com/M-Lenvik/First-CSS-project-Pixel-Perfect',
     liveDemo: 'https://m-lenvik.github.io/First-CSS-project-Pixel-Perfect/',
     tech: ['SASS', 'HTML'],
   },

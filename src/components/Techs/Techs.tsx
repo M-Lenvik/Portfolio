@@ -11,6 +11,8 @@ const techImages: Record<string, string> = {
   TypeScript: 'typescriptlang-icon.svg',
   Vue: 'vuejs-icon.svg',
   React: 'reactjs-icon.svg',
+  'React Router': 'react_router.png',
+  PWA: 'pwa.png',
   A11Y: 'a11y-icon.svg',
   // Backend
   'Node.js': 'nodejs-icon.svg',
@@ -29,11 +31,18 @@ const techImages: Record<string, string> = {
   Användbarhetstester: 'ux_test.png',
   // Verktyg & metodik
   'VS Code': 'Visual Studio Code-logo.jpeg',
-  Git: 'github-tile.svg',
+  GitHub: 'github-tile.svg',
   Vite: 'vitejsdev-icon.svg',
   'WCAG 2.0': 'wcag2.2AAA.png',
   Lighthouse: 'lighthouse.png',
   'Agile/Scrum': 'agile.png',
+  Cursor: 'cursor-icon.jpeg',
+  'GitHub Copilot': 'github_copilot-icon.svg',
+  Claude: 'claude.png',
+  NPM: 'Npm-logo.svg',
+  ESLint: 'eslint.png',
+  Prettier: 'prettier.png',
+  LocalStorage: 'localstorage.png',
   Gemini: 'gemini.png',
 };
 
@@ -92,8 +101,11 @@ export const Techs = () => {
           <TechItem name="SASS" />
           <TechItem name="Tailwind" />
           <TechItem name="JavaScript" />
-          <TechItem name="Vue" />
+          <TechItem name="TypeScript" />
           <TechItem name="React" />
+          <TechItem name="Vue" />
+          <TechItem name="React Router" />
+          <TechItem name="PWA" />
         </div>
 
         <div className="tech-stack__group">
@@ -102,16 +114,16 @@ export const Techs = () => {
           <TechItem name="Express" />
           <TechItem name="REST API" />
           <TechItem name="MongoDB" />
-          <TechItem name="Insomnia" />
           <TechItem name="SQL" />
+          <TechItem name="Insomnia" />
         </div>
 
         <div className="tech-stack__group">
           <span className="tech-stack__title">Design & UX:</span>
-          <TechItem name="UX_UI_design" />
           <TechItem name="Figma" />
           <TechItem name="Adobe Photoshop" />
           <TechItem name="Adobe Firefly" />
+          <TechItem name="UX_UI_design" />
           <TechItem name="Flowcharts" />
           <TechItem name="Mid_fidelity_prototyping" />
           <TechItem name="Användbarhetstester" />
@@ -127,8 +139,15 @@ export const Techs = () => {
         <div className="tech-stack__group">
           <span className="tech-stack__title">Verktyg & metodik:</span>
           <TechItem name="VS Code" />
-          <TechItem name="Git" />
+          <TechItem name="Cursor" />
+          <TechItem name="GitHub" />
+          <TechItem name="GitHub Copilot" />
+          <TechItem name="Claude" />
+          <TechItem name="NPM" />
           <TechItem name="Vite" />
+          <TechItem name="ESLint" />
+          <TechItem name="Prettier" />
+          <TechItem name="LocalStorage" />
           <TechItem name="Agile/Scrum" />
           <TechItem name="Gemini" />
         </div>

@@ -14,6 +14,8 @@ const techImages: Record<string, string> = {
   TypeScript: 'typescriptlang-icon.svg',
   Vue: 'vuejs-icon.svg',
   React: 'reactjs-icon.svg',
+  'React Router': 'react_router.png',
+  PWA: 'pwa.png',
   A11Y: 'a11y-icon.svg',
   // Backend
   'Node.js': 'nodejs-icon.svg',
@@ -32,11 +34,19 @@ const techImages: Record<string, string> = {
   Användbarhetstester: 'ux_test.png',
   // Verktyg & metodik
   'VS Code': 'Visual Studio Code-logo.jpeg',
-  Git: 'github-tile.svg',
+  GitHub: 'github-tile.svg',
   Vite: 'vitejsdev-icon.svg',
   'WCAG 2.0': 'wcag2.2AAA.png',
+  Lighthouse: 'lighthouse.png',
+  NPM: 'Npm-logo.svg',
+  ESLint: 'eslint.png',
+  Prettier: 'prettier.png',
+  LocalStorage: 'localstorage.png',
   'Agile/Scrum': 'agile.png',
   Gemini: 'gemini.png',
+  Cursor: 'cursor-icon.jpeg',
+  'GitHub Copilot': 'github_copilot-icon.svg',
+  Claude: 'claude.png',
 };
 
 const techIconsLight = new Set(['A11Y', 'Express', 'REST API']);

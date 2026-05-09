@@ -56,6 +56,28 @@
           border-color: var(--color-footer-btn-hover-bg);
           color: var(--color-footer-btn-hover-color);
         }
+
+        &--reveal {
+          max-width: min(100%, 22rem);
+
+          .footer__btn-value {
+            display: none;
+            font-size: 0.85rem;
+            line-height: 1.35;
+            word-break: break-word;
+          }
+
+          &:hover,
+          &:focus-visible {
+            .footer__btn-label {
+              display: none;
+            }
+
+            .footer__btn-value {
+              display: inline;
+            }
+          }
+        }
       }
     }
   }

@@ -3,6 +3,44 @@ import './ProjectCard.scss';
 import { Carousel } from '../Carousel/Carousel';
 import type { ProjectCardProps } from '../../types';
 
+// Bildkartotek för tekniker – en kanonisk nyckel per teknik (samma som i Techs)
+const techImages: Record<string, string> = {
+  // Frontend
+  HTML: 'HTML5_Badge.svg',
+  CSS: 'css-icon.svg',
+  SASS: 'sass-lang-icon.svg',
+  Tailwind: 'tailwindcss-icon.svg',
+  JavaScript: 'javascript-icon.svg',
+  TypeScript: 'typescriptlang-icon.svg',
+  Vue: 'vuejs-icon.svg',
+  React: 'reactjs-icon.svg',
+  A11Y: 'a11y-icon.svg',
+  // Backend
+  'Node.js': 'nodejs-icon.svg',
+  Express: 'expressjs-icon.svg',
+  'REST API': 'rest-api-icon.svg',
+  MongoDB: 'mongodb-icon.svg',
+  Insomnia: 'insomnia.png',
+  SQL: 'mysql-logo.png',
+  // Design & UX
+  UX_UI_design: 'ux_ui.png',
+  Figma: 'figma-icon.svg',
+  'Adobe Photoshop': 'adobe-photoshop-seeklogo.svg',
+  'Adobe Firefly': 'Adobe_Firefly_Logo.svg.png',
+  Flowcharts: 'flowchart.png',
+  Mid_fidelity_prototyping: 'prototyping.png',
+  Användbarhetstester: 'ux_test.png',
+  // Verktyg & metodik
+  'VS Code': 'Visual Studio Code-logo.jpeg',
+  Git: 'github-tile.svg',
+  Vite: 'vitejsdev-icon.svg',
+  'WCAG 2.0': 'wcag2.2AAA.png',
+  'Agile/Scrum': 'agile.png',
+  Gemini: 'gemini.png',
+};
+
+const techIconsLight = new Set(['A11Y', 'Express', 'REST API']);
+
 export const ProjectCard = ({
   title,
   description,
@@ -100,11 +138,46 @@ export const ProjectCard = ({
 
         {/* Tekniker */}
         <div className="project-card__techs">
-          {tech.map((techItem, index) => (
-            <span key={index} className="project-card__tech">
-              {techItem}
-            </span>
-          ))}
+          {tech.map((techItem, index) => {
+            const imageFile = techImages[techItem];
+            const useLight = techIconsLight.has(techItem);
+            if (imageFile) {
+              return (
+                <span
+                  key={index}
+                  className={`project-card__tech project-card__tech--image${useLight ? ' project-card__tech--image-light' : ''}`}
+                >
+                  <span className="tooltip" aria-hidden>
+                    {techItem}
+                  </span>
+                  <img
+                    src={`${import.meta.env.BASE_URL}images/tech/${imageFile}`}
+                    alt={techItem}
+                    className="project-card__tech-img"
+                    loading="lazy"
+                  onError={(e) => {
+                    const img = e.currentTarget;
+                    img.style.display = 'none';
+                    const parent = img.parentElement;
+                    parent?.classList.remove('project-card__tech--image');
+                    parent?.classList.add('project-card__tech--fallback');
+                    const label = img.nextElementSibling as HTMLElement | null;
+                    if (label) label.style.display = 'inline';
+                  }}
+                  />
+              <span className="project-card__tech-label">{techItem}</span>
+                </span>
+              );
+            }
+            return (
+              <span key={index} className="project-card__tech project-card__tech--fallback">
+                <span className="tooltip" aria-hidden>
+                  {techItem}
+                </span>
+                <span className="project-card__tech-label">{techItem}</span>
+              </span>
+            );
+          })}
         </div>
 
         {/* Länkar */}

@@ -67,6 +67,19 @@
         object-fit: contain;
         display: block;
       }
+
+      &-label {
+        display: none;
+      }
+
+      &--fallback {
+        .tech-stack__tech-label {
+          display: inline;
+        }
+        img {
+          display: none;
+        }
+      }
     }
   }
 }

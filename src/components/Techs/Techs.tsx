@@ -1,9 +1,9 @@
 import './Techs.scss';
 
-// Mapping between tech names and their image files
+// Mapping between tech names and their image files – one canonical key per tech
 const techImages: Record<string, string> = {
   // Frontend
-  HTML5: 'HTML5_Badge.svg',
+  HTML: 'HTML5_Badge.svg',
   CSS: 'css-icon.svg',
   SASS: 'sass-lang-icon.svg',
   Tailwind: 'tailwindcss-icon.svg',
@@ -17,17 +17,24 @@ const techImages: Record<string, string> = {
   Express: 'expressjs-icon.svg',
   'REST API': 'rest-api-icon.svg',
   MongoDB: 'mongodb-icon.svg',
+  Insomnia: 'insomnia.png',
   SQL: 'mysql-logo.png',
   // Design & UX
-  'UX/UI-design': 'ux_ui.png',
+  UX_UI_design: 'ux_ui.png',
   Figma: 'figma-icon.svg',
   'Adobe Photoshop': 'adobe-photoshop-seeklogo.svg',
+  'Adobe Firefly': 'Adobe_Firefly_Logo.svg.png',
+  Flowcharts: 'flowchart.png',
+  Mid_fidelity_prototyping: 'prototyping.png',
+  Användbarhetstester: 'ux_test.png',
   // Verktyg & metodik
   'VS Code': 'Visual Studio Code-logo.jpeg',
   Git: 'github-tile.svg',
   Vite: 'vitejsdev-icon.svg',
   'WCAG 2.0': 'wcag2.2AAA.png',
+  Lighthouse: 'lighthouse.png',
   'Agile/Scrum': 'agile.png',
+  Gemini: 'gemini.png',
 };
 
 // Icons that are dark by default – render as light via CSS filter
@@ -51,15 +58,25 @@ const TechItem = ({ name }: TechItemProps) => {
           src={`${import.meta.env.BASE_URL}images/tech/${imageFile}`}
           alt={name}
           className="tech-stack__tech-img"
+          onError={(e) => {
+            const img = e.currentTarget;
+            img.style.display = 'none';
+            const parent = img.parentElement;
+            parent?.classList.remove('tech-stack__tech--image', 'tech-stack__tech--image-light');
+            parent?.classList.add('tech-stack__tech--fallback');
+            const label = img.nextElementSibling as HTMLElement | null;
+            if (label) label.style.display = 'inline';
+          }}
         />
+        <span className="tech-stack__tech-label" aria-hidden>{name}</span>
       </span>
     );
   }
 
   return (
-    <span className="tech-stack__tech">
+    <span className="tech-stack__tech tech-stack__tech--fallback">
       <span className="tooltip" aria-hidden>{name}</span>
-      {name}
+      <span className="tech-stack__tech-label">{name}</span>
     </span>
   );
 };
@@ -70,12 +87,11 @@ export const Techs = () => {
       <div className="tech-stack">
         <div className="tech-stack__group">
           <span className="tech-stack__title">Frontend:</span>
-          <TechItem name="HTML5" />
+          <TechItem name="HTML" />
           <TechItem name="CSS" />
           <TechItem name="SASS" />
           <TechItem name="Tailwind" />
           <TechItem name="JavaScript" />
-          <TechItem name="TypeScript" />
           <TechItem name="Vue" />
           <TechItem name="React" />
         </div>
@@ -86,20 +102,26 @@ export const Techs = () => {
           <TechItem name="Express" />
           <TechItem name="REST API" />
           <TechItem name="MongoDB" />
+          <TechItem name="Insomnia" />
           <TechItem name="SQL" />
         </div>
 
         <div className="tech-stack__group">
           <span className="tech-stack__title">Design & UX:</span>
-          <TechItem name="UX/UI-design" />
+          <TechItem name="UX_UI_design" />
           <TechItem name="Figma" />
           <TechItem name="Adobe Photoshop" />
+          <TechItem name="Adobe Firefly" />
+          <TechItem name="Flowcharts" />
+          <TechItem name="Mid_fidelity_prototyping" />
+          <TechItem name="Användbarhetstester" />
         </div>
 
         <div className="tech-stack__group">
           <span className="tech-stack__title">Tillgänglighet:</span>
           <TechItem name="A11Y" />
           <TechItem name="WCAG 2.0" />
+          <TechItem name="Lighthouse" />
         </div>
 
         <div className="tech-stack__group">
@@ -108,6 +130,7 @@ export const Techs = () => {
           <TechItem name="Git" />
           <TechItem name="Vite" />
           <TechItem name="Agile/Scrum" />
+          <TechItem name="Gemini" />
         </div>
       </div>
     </section>

@@ -9,7 +9,7 @@ export const projects = [
     image: `${import.meta.env.BASE_URL}images/SowSmart.png`,
     github: 'https://github.com/M-Lenvik/Examensarbete-SowSmart',
     liveDemo: 'https://m-lenvik.github.io/Examensarbete-SowSmart/',
-    tech: ['React', 'TypeScript', 'SCSS', 'HTML'],
+    tech: ['React', 'TypeScript', 'SASS', 'HTML'],
   },
   {
     title: 'Javascript Ramverk, React<br> The Zoo',
@@ -20,7 +20,7 @@ export const projects = [
     image: `${import.meta.env.BASE_URL}images/The_Zoo.png`,
     github: 'https://github.com/M-Lenvik/Javascript-ramverk-React-The-Zoo',
     liveDemo: 'https://m-lenvik.github.io/Javascript-ramverk-React-The-Zoo/',
-    tech: ['React', 'TypeScript', 'SCSS', 'HTML'],
+    tech: ['React', 'TypeScript', 'SASS', 'HTML'],
   },
   {
     title: 'Javascript Ramverk, React<br> ToDo App',
@@ -31,7 +31,7 @@ export const projects = [
     image: `${import.meta.env.BASE_URL}images/React_ToDo.png`,
     github: 'https://github.com/M-Lenvik/Javascript-ramverk-React-ToDo',
     liveDemo: 'https://m-lenvik.github.io/Javascript-ramverk-React-ToDo/',
-    tech: ['React', 'TypeScript', 'Tailwind CSS', 'HTML'],
+    tech: ['React', 'TypeScript', 'Tailwind', 'HTML'],
   },
   {
     title:
@@ -41,7 +41,7 @@ export const projects = [
     tech_description: 'En bokplattform byggd med MongoDB och Express.',
         image: `${import.meta.env.BASE_URL}images/API_BookNest.png`,
     github: 'https://github.com/M-Lenvik/API-Book-api',
-    tech: ['Vue', 'Typescript', 'MongoDB', 'Insomnia', 'HTML', 'SASS'],
+    tech: ['Vue', 'TypeScript', 'MongoDB', 'Insomnia', 'HTML', 'SASS'],
   },
   {
     title: 'API utveckling <br>Databas för webbshop',
@@ -51,11 +51,10 @@ export const projects = [
     github: 'https://github.com/M-Lenvik/API-webbshop',
     tech: [
       'Vue',
-      'Typescript',
+      'TypeScript',
       'Express',
       'Node.js',
       'SQL',
-      'MySQLphpAdmin',
       'Insomnia',
       'HTML',
       'SASS',
@@ -68,7 +67,7 @@ export const projects = [
                 image: `${import.meta.env.BASE_URL}images/grafisk_design_glantan.png`,
     github: 'https://github.com/M-Lenvik/Grafiska-verktyg-Koduppgift',
     liveDemo: 'https://m-lenvik.github.io/Grafiska-verktyg-Koduppgift/#/',
-    tech: ['Vue', 'Javascript', 'HTML', 'SASS'],
+    tech: ['Vue', 'JavaScript', 'HTML', 'SASS'],
   },
   {
     title: 'Grafisk design <br>Designuppgift',
@@ -94,7 +93,7 @@ export const projects = [
       'https://github.com/M-Lenvik/Grafiska-verktyg-AI-genererad-bild-och-SVG-fil',
     liveDemo:
       'https://m-lenvik.github.io/Grafiska-verktyg-AI-genererad-bild-och-SVG-fil/',
-    tech: ['Gemeni', 'Adobe Firefly'],
+    tech: ['Gemini', 'Adobe Firefly'],
   },
   {
     title: 'UX/UI <br>Designa en lösning på ett samhällsproblem',
@@ -104,10 +103,9 @@ export const projects = [
     video: `${import.meta.env.BASE_URL}images/UX-UI_Closet_Cycle_demo_lång.mp4`,
     github: 'https://github.com/M-Lenvik/UX-UI-projekt',
     tech: [
-      'FigJam',
       'Figma',
-      'Flowsharts',
-      'Mid-fidelity prototyping',
+      'Flowcharts',
+      'Mid_fidelity_prototyping',
       'Användbarhetstester',
     ],
   },
@@ -118,7 +116,7 @@ export const projects = [
     image: `${import.meta.env.BASE_URL}images/arbetsmetodik_ToDo_App_Vue.png.jpg`,
     github: 'https://github.com/M-Lenvik/Arbetsmetodik-Vue',
     liveDemo: 'https://m-lenvik.github.io/Arbetsmetodik-Vue/',
-    tech: ['Vue', 'Typescript', 'Tailwind', 'HTML'],
+    tech: ['Vue', 'TypeScript', 'Tailwind', 'HTML'],
   },
   {
     title: 'Arbetsmetodik, Vue <br>Fixa koden',
@@ -127,7 +125,7 @@ export const projects = [
     image: `${import.meta.env.BASE_URL}images//arbetsmetodik_code_smells.png`,
     github: 'https://github.com/M-Lenvik/Arbetsmetodik-Code-Smells',
     liveDemo: 'https://m-lenvik.github.io/Arbetsmetodik-Code-Smells/',
-    tech: ['Typescript', 'SASS', 'HTML'],
+    tech: ['TypeScript', 'SASS', 'HTML'],
   },
   {
     title: 'Javascript och Agilt projektarbete i grupp </br> Quiz',
@@ -137,7 +135,7 @@ export const projects = [
     image: `${import.meta.env.BASE_URL}images/javascript_quiz.jpg`,
     github: 'https://github.com/M-Lenvik/Javascript-grupparbete-Quiz',
     liveDemo: 'https://m-lenvik.github.io/Javascript-grupparbete-Quiz/',
-    tech: ['Typescript', 'SASS', 'HTML'],
+    tech: ['TypeScript', 'SASS', 'HTML'],
   },
   {
     title: 'Javascript <br>Webshop',
@@ -146,7 +144,7 @@ export const projects = [
     image: `${import.meta.env.BASE_URL}images/javascript_webshop.png`,
     github: 'https://github.com/M-Lenvik/First-javascript-project-Webshop',
     liveDemo: 'https://m-lenvik.github.io/First-javascript-project-Webshop/',
-    tech: ['Javascript', 'SASS', 'HTML'],
+    tech: ['JavaScript', 'SASS', 'HTML'],
   },
   {
     title: 'HTLM uppgift <br>Pixel perfekt',

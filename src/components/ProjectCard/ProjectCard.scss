@@ -89,6 +89,42 @@
       
       .project-card__tech {
         @include tech-badge;
+        @include tooltip;
+
+        &.project-card__tech--image {
+          padding: 0.3rem 0.5rem;
+          border: none;
+          box-shadow: none;
+          background: transparent;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.35rem;
+        }
+
+        &.project-card__tech--image-light img {
+          filter: brightness(0) invert(1);
+        }
+
+        &-img {
+          height: 2rem;
+          width: auto;
+          display: block;
+        }
+
+        &-label {
+          display: none;
+        }
+
+        &--fallback {
+          @include tech-badge;
+          padding: 0.4rem 0.8rem;
+          img {
+            display: none;
+          }
+          .project-card__tech-label {
+            display: inline;
+          }
+        }
       }
     }
     

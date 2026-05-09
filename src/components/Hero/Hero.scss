@@ -89,9 +89,13 @@
     }
 
     .hero__description {
+      width: 75%;
+      max-width: 75%;
+      margin-left: auto;
+      margin-right: auto;
       text-align: left;
       position: relative;
-      padding-left: 0; // Text börjar längst till vänster
+      padding-left: 0;
       margin-top: 1rem;
 
       p {
@@ -129,17 +133,19 @@
       }
 
       .hero__description {
-        padding-left: 0; // Ta bort padding på desktop
+        padding-left: 0;
         padding-right: 1rem;
-      }
-
-      .hero__description,
-      .hero__picture {
-        width: 100%;
+        width: 75%;
+        max-width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
         box-sizing: border-box;
       }
 
       .hero__picture {
+        width: 100%;
+        box-sizing: border-box;
         margin-top: 0;
       }
     }

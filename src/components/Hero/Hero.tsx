@@ -28,18 +28,29 @@ export const Hero = () => {
         </div>
 
         <div className="hero__description">
-         {/*
           <p>
-            Junior frontend utvecklare mer hjärta i att skapa användarvänliga, tillgängliga och visuellt tilltalande lösningar.
+            Jag har studerat frontendutveckling på Medieinstitutet och har tidigare utbildning inom
+            interaktionsdesign. Bakgrunden gör att jag ofta landar mellan kod, layout och
+            användarbehov — jag vill att det som byggs ska både fungera tekniskt och kännas rimligt
+            för den som ska använda det.
           </p>
           <p>
+            Nedanför hittar du ett urval av mina skolprojekt från hela utbildningen. Tillsammans visar
+            de spannet och utvecklingskurvan: från första HTML och CSS (till exempel pixel
+            perfekt-uppgiften), vidare genom JavaScript och webshop, API:er och databaser, ramverk som
+            Vue och React, UX- och designarbete, till avslutande examensarbete där flera tekniker och
+            verktyg möts i en större helhet.
+          </p>
           <p>
-          Om du är intresserad av att se närmre på min utbildning får du gärna
-          läsa mitt CV.
+            Som en del av utbildningen gör jag LIA på WNDY och arbetar i en skarp produktmiljö. Där
+            strävar jag efter att leverera skarpt och i tid — och hittar ofta mina egna uppgifter genom
+            att se brister eller luckor i designen innan de blir tekniska problem. Jag testar nya
+            funktioner, följer upp beteenden i gränssnittet och bidrar med att hitta och rätta fel.
           </p>
+          <p>
+            Jag trivs med noggrannhet i arbetet — öga för detaljer, manuell testning och att hitta
+            småfel och kantfall innan de hinner bli problem för användaren eller teamet.
           </p>
-          */}
-
         </div>
 {/*
         <div className="hero__picture">

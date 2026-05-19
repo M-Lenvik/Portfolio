@@ -5,6 +5,7 @@
 // Mobile-first: Base styles (mobile)
 .techs {
   display: flex;
+  flex-direction: column;
   padding: 1.5em;
   height: fit-content;
   width: 95%;

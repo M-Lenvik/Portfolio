@@ -6,7 +6,7 @@ export const Hero = () => {
   const displayedText = useTypewriter(); /*hook for typewriter effect*/
 
   return (
-    <section className="hero" id="hero">
+    <section className="hero" id="hero" aria-labelledby="hero-heading">
       <div className="hero__content">
         {/* Mobile: Bild, h1, h2 */}
         <div className="header__intro-mobile">
@@ -28,6 +28,9 @@ export const Hero = () => {
         </div>
 
         <div className="hero__description">
+          <h2 id="hero-heading" className="visually-hidden">
+            Introduktion
+          </h2>
           <p>
             Jag har studerat frontendutveckling på Medieinstitutet och har tidigare utbildning inom
             interaktionsdesign. Bakgrunden gör att jag ofta landar mellan kod, layout och

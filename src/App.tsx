@@ -13,9 +13,11 @@ function App() {
   return (
     <>
       <Header />
-      <Hero />
-      <Techs />
-      <Projects />
+      <main id="main-content" tabIndex={-1}>
+        <Hero />
+        <Techs />
+        <Projects />
+      </main>
       <Footer />
     </>
   );

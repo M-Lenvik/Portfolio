@@ -92,7 +92,10 @@ const TechItem = ({ name }: TechItemProps) => {
 
 export const Techs = () => {
   return (
-    <section className="techs" id="techs">
+    <section className="techs" id="techs" aria-labelledby="techs-heading">
+      <h2 id="techs-heading" className="visually-hidden">
+        Tekniker och verktyg
+      </h2>
       <div className="tech-stack">
         <div className="tech-stack__group">
           <span className="tech-stack__title">Frontend:</span>

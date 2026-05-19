@@ -86,8 +86,10 @@ export const ProjectCard = ({
     return () => window.removeEventListener('resize', runAfterLayout);
   }, [title, description, tech_description, tech]);
 
+  const titlePlainText = title.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+
   return (
-    <div className="project-card" id="project-card">
+    <article className="project-card">
       {/*Innehåll*/}
       <div className="project-card__content" ref={contentRef}>
         <h3
@@ -121,6 +123,7 @@ export const ProjectCard = ({
               loop
               muted
               className="project-card__image"
+              title={titlePlainText}
             />
           ) : Array.isArray(images) && images.length > 1 ? (
             <Carousel
@@ -199,7 +202,7 @@ export const ProjectCard = ({
               rel="noopener noreferrer"
               className="project-card__link"
             >
-              <i className="fa-brands fa-github"></i> Se koden på GitHub
+              <i className="fa-brands fa-github" aria-hidden="true" /> Se koden på GitHub
             </a>
           )}
           {liveDemo && (
@@ -209,11 +212,11 @@ export const ProjectCard = ({
               rel="noopener noreferrer"
               className="project-card__link"
             >
-              <i className="fa-solid fa-globe"></i> Live demo
+              <i className="fa-solid fa-globe" aria-hidden="true" /> Live demo
             </a>
           )}
         </div>
       </div>
-    </div>
+    </article>
   );
 };

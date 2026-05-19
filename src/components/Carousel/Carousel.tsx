@@ -52,7 +52,7 @@ export const Carousel = ({ images, altPrefix = 'bild', imageClassName = '' }: Ca
             onClick={goToPrev}
             aria-label="Föregående bild"
           >
-            <i className="fa-solid fa-chevron-left" />
+            <i className="fa-solid fa-chevron-left" aria-hidden="true" />
           </button>
           <button
             type="button"
@@ -60,16 +60,15 @@ export const Carousel = ({ images, altPrefix = 'bild', imageClassName = '' }: Ca
             onClick={goToNext}
             aria-label="Nästa bild"
           >
-            <i className="fa-solid fa-chevron-right" />
+            <i className="fa-solid fa-chevron-right" aria-hidden="true" />
           </button>
-          <div className="carousel__dots" role="tablist" aria-label="Bildindikatorer">
+          <div className="carousel__dots" role="group" aria-label="Välj bild i karusellen">
             {images.map((_, index) => (
               <button
                 key={index}
                 type="button"
-                role="tab"
-                aria-selected={index === currentIndex}
-                aria-label={`Gå till bild ${index + 1}`}
+                aria-current={index === currentIndex ? 'true' : undefined}
+                aria-label={`Visa bild ${index + 1} av ${images.length}`}
                 className={`carousel__dot ${index === currentIndex ? 'carousel__dot--active' : ''}`}
                 onClick={() => setCurrentIndex(index)}
               />

@@ -51,7 +51,9 @@ export const Footer = () => {
 
       <div className="footer__bottom">
         <p className="footer__copy">&copy; {new Date().getFullYear()} Maries Portfolio</p>
-        <a href="#header" className="footer__backtotop">Till toppen ↑</a>
+        <a href="#header" className="footer__backtotop" aria-label="Till toppen av sidan">
+          Till toppen ↑
+        </a>
       </div>
     </footer>
   );

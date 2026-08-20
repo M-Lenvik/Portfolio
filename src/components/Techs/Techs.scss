@@ -56,6 +56,11 @@
         background-color: transparent;
         border: none;
         box-shadow: none;
+
+        // Dark source images (e.g. REST API) – force white to match other icons
+        &-light .tech-stack__tech-img {
+          filter: brightness(0) invert(1);
+        }
       }
 
       &-img {
@@ -63,6 +68,7 @@
         height: 2rem;
         display: block;
         color: var(--color-secondary);
+        object-fit: contain;
       }
 
       &-label {

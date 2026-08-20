@@ -30,14 +30,22 @@ import {
   SiReactrouter,
   SiSass,
   SiScrumalliance,
-  SiSwagger,
   SiTailwindcss,
   SiTypescript,
-  SiVite,
   SiVuedotjs,
 } from 'react-icons/si';
-import { TbBrandAdobePhotoshop, TbBrandVscode, TbFlame } from 'react-icons/tb';
+import {
+  TbBrandAdobePhotoshop,
+  TbBrandVite,
+  TbBrandVscode,
+  TbFlame,
+} from 'react-icons/tb';
 import './Techs.scss';
+
+// Custom image files for techs without a good react-icons match
+const techImages: Record<string, string> = {
+  'REST API': 'rest-api-icon.svg',
+};
 
 // Mapping between tech names and react-icons – omit entry to use text fallback
 const techIcons: Record<string, IconType> = {
@@ -55,7 +63,6 @@ const techIcons: Record<string, IconType> = {
   // Backend
   'Node.js': SiNodedotjs,
   Express: SiExpress,
-  'REST API': SiSwagger,
   MongoDB: SiMongodb,
   Insomnia: SiInsomnia,
   SQL: SiMysql,
@@ -74,7 +81,7 @@ const techIcons: Record<string, IconType> = {
   // Verktyg & metodik
   'VS Code': TbBrandVscode,
   GitHub: SiGithub,
-  Vite: SiVite,
+  Vite: TbBrandVite,
   Cursor: SiCursor,
   'GitHub Copilot': SiGithubcopilot,
   Claude: SiClaude,
@@ -91,7 +98,23 @@ type TechItemProps = {
 };
 
 const TechItem = ({ name }: TechItemProps) => {
+  const imageFile = techImages[name];
   const Icon = techIcons[name];
+
+  if (imageFile) {
+    return (
+      <span className="tech-stack__tech tech-stack__tech--icon tech-stack__tech--icon-light">
+        <span className="tooltip" aria-hidden>
+          {name}
+        </span>
+        <img
+          src={`${import.meta.env.BASE_URL}images/tech/${imageFile}`}
+          alt={name}
+          className="tech-stack__tech-img"
+        />
+      </span>
+    );
+  }
 
   if (Icon) {
     return (

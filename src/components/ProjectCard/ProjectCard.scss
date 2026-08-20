@@ -91,7 +91,7 @@
         @include tech-badge;
         @include tooltip;
 
-        &.project-card__tech--image {
+        &.project-card__tech--icon {
           padding: 0.3rem 0.5rem;
           border: none;
           box-shadow: none;
@@ -99,16 +99,19 @@
           display: inline-flex;
           align-items: center;
           gap: 0.35rem;
-        }
 
-        &.project-card__tech--image-light img {
-          filter: brightness(0) invert(1);
+          // Dark source images (e.g. REST API) – force white to match other icons
+          &-light .project-card__tech-img {
+            filter: brightness(0) invert(1);
+          }
         }
 
         &-img {
+          width: 2rem;
           height: 2rem;
-          width: auto;
           display: block;
+          color: var(--color-secondary);
+          object-fit: contain;
         }
 
         &-label {
@@ -118,9 +121,6 @@
         &--fallback {
           @include tech-badge;
           padding: 0.4rem 0.8rem;
-          img {
-            display: none;
-          }
           .project-card__tech-label {
             display: inline;
           }

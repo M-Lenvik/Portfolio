@@ -1,5 +1,12 @@
 import type { IconType } from 'react-icons';
 import {
+  FaPencilRuler,
+  FaProjectDiagram,
+  FaUniversalAccess,
+  FaUserCheck,
+} from 'react-icons/fa';
+import { MdDevices, MdStorage, MdVerified } from 'react-icons/md';
+import {
   SiClaude,
   SiCss,
   SiCursor,
@@ -22,12 +29,14 @@ import {
   SiReact,
   SiReactrouter,
   SiSass,
+  SiScrumalliance,
+  SiSwagger,
   SiTailwindcss,
   SiTypescript,
   SiVite,
   SiVuedotjs,
 } from 'react-icons/si';
-import { TbBrandVscode } from 'react-icons/tb';
+import { TbBrandAdobePhotoshop, TbBrandVscode, TbFlame } from 'react-icons/tb';
 import './Techs.scss';
 
 // Mapping between tech names and react-icons – omit entry to use text fallback
@@ -46,12 +55,21 @@ const techIcons: Record<string, IconType> = {
   // Backend
   'Node.js': SiNodedotjs,
   Express: SiExpress,
+  'REST API': SiSwagger,
   MongoDB: SiMongodb,
   Insomnia: SiInsomnia,
   SQL: SiMysql,
   // Design & UX
   Figma: SiFigma,
+  'Adobe Photoshop': TbBrandAdobePhotoshop,
+  'Adobe Firefly': TbFlame,
+  UX_UI_design: FaPencilRuler,
+  Flowcharts: FaProjectDiagram,
+  Mid_fidelity_prototyping: MdDevices,
+  Användbarhetstester: FaUserCheck,
   // Tillgänglighet
+  A11Y: FaUniversalAccess,
+  'WCAG 2.0': MdVerified,
   Lighthouse: SiLighthouse,
   // Verktyg & metodik
   'VS Code': TbBrandVscode,
@@ -63,6 +81,8 @@ const techIcons: Record<string, IconType> = {
   NPM: SiNpm,
   ESLint: SiEslint,
   Prettier: SiPrettier,
+  LocalStorage: MdStorage,
+  'Agile/Scrum': SiScrumalliance,
   Gemini: SiGooglegemini,
 };
 

@@ -4,5 +4,6 @@ import react from '@vitejs/plugin-react';
 //vite.config.ts
 export default defineConfig({
   plugins: [react()],
-  base: '/Portfolio/',
+  base: '/', //for lenvik.eu
+//  base: '/Portfolio/', // for github pages
 });

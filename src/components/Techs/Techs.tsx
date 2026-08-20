@@ -1,90 +1,95 @@
+import type { IconType } from 'react-icons';
+import {
+  SiClaude,
+  SiCss,
+  SiCursor,
+  SiEslint,
+  SiExpress,
+  SiFigma,
+  SiGithub,
+  SiGithubcopilot,
+  SiGooglegemini,
+  SiHtml5,
+  SiInsomnia,
+  SiJavascript,
+  SiLighthouse,
+  SiMongodb,
+  SiMysql,
+  SiNodedotjs,
+  SiNpm,
+  SiPrettier,
+  SiPwa,
+  SiReact,
+  SiReactrouter,
+  SiSass,
+  SiTailwindcss,
+  SiTypescript,
+  SiVite,
+  SiVuedotjs,
+} from 'react-icons/si';
+import { TbBrandVscode } from 'react-icons/tb';
 import './Techs.scss';
 
-// Mapping between tech names and their image files – one canonical key per tech
-const techImages: Record<string, string> = {
+// Mapping between tech names and react-icons – omit entry to use text fallback
+const techIcons: Record<string, IconType> = {
   // Frontend
-  HTML: 'HTML5_Badge.svg',
-  CSS: 'css-icon.svg',
-  SASS: 'sass-lang-icon.svg',
-  Tailwind: 'tailwindcss-icon.svg',
-  JavaScript: 'javascript-icon.svg',
-  TypeScript: 'typescriptlang-icon.svg',
-  Vue: 'vuejs-icon.svg',
-  React: 'reactjs-icon.svg',
-  'React Router': 'react_router.png',
-  PWA: 'pwa.png',
-  A11Y: 'a11y-icon.svg',
+  HTML: SiHtml5,
+  CSS: SiCss,
+  SASS: SiSass,
+  Tailwind: SiTailwindcss,
+  JavaScript: SiJavascript,
+  TypeScript: SiTypescript,
+  Vue: SiVuedotjs,
+  React: SiReact,
+  'React Router': SiReactrouter,
+  PWA: SiPwa,
   // Backend
-  'Node.js': 'nodejs-icon.svg',
-  Express: 'expressjs-icon.svg',
-  'REST API': 'rest-api-icon.svg',
-  MongoDB: 'mongodb-icon.svg',
-  Insomnia: 'insomnia.png',
-  SQL: 'mysql-logo.png',
+  'Node.js': SiNodedotjs,
+  Express: SiExpress,
+  MongoDB: SiMongodb,
+  Insomnia: SiInsomnia,
+  SQL: SiMysql,
   // Design & UX
-  UX_UI_design: 'ux_ui.png',
-  Figma: 'figma-icon.svg',
-  'Adobe Photoshop': 'adobe-photoshop-seeklogo.svg',
-  'Adobe Firefly': 'Adobe_Firefly_Logo.svg.png',
-  Flowcharts: 'flowchart.png',
-  Mid_fidelity_prototyping: 'prototyping.png',
-  Användbarhetstester: 'ux_test.png',
+  Figma: SiFigma,
+  // Tillgänglighet
+  Lighthouse: SiLighthouse,
   // Verktyg & metodik
-  'VS Code': 'Visual Studio Code-logo.jpeg',
-  GitHub: 'github-tile.svg',
-  Vite: 'vitejsdev-icon.svg',
-  'WCAG 2.0': 'wcag2.2AAA.png',
-  Lighthouse: 'lighthouse.png',
-  'Agile/Scrum': 'agile.png',
-  Cursor: 'cursor-icon.jpeg',
-  'GitHub Copilot': 'github_copilot-icon.svg',
-  Claude: 'claude.png',
-  NPM: 'Npm-logo.svg',
-  ESLint: 'eslint.png',
-  Prettier: 'prettier.png',
-  LocalStorage: 'localstorage.png',
-  Gemini: 'gemini.png',
+  'VS Code': TbBrandVscode,
+  GitHub: SiGithub,
+  Vite: SiVite,
+  Cursor: SiCursor,
+  'GitHub Copilot': SiGithubcopilot,
+  Claude: SiClaude,
+  NPM: SiNpm,
+  ESLint: SiEslint,
+  Prettier: SiPrettier,
+  Gemini: SiGooglegemini,
 };
-
-// Icons that are dark by default – render as light via CSS filter
-const techIconsLight = new Set(['A11Y', 'Express', 'REST API']);
 
 type TechItemProps = {
   name: string;
 };
 
 const TechItem = ({ name }: TechItemProps) => {
-  const imageFile = techImages[name];
-  const useLight = techIconsLight.has(name);
+  const Icon = techIcons[name];
 
-  if (imageFile) {
+  if (Icon) {
     return (
-      <span
-        className={`tech-stack__tech tech-stack__tech--image${useLight ? ' tech-stack__tech--image-light' : ''}`}
-      >
-        <span className="tooltip" aria-hidden>{name}</span>
-        <img
-          src={`${import.meta.env.BASE_URL}images/tech/${imageFile}`}
-          alt={name}
-          className="tech-stack__tech-img"
-          onError={(e) => {
-            const img = e.currentTarget;
-            img.style.display = 'none';
-            const parent = img.parentElement;
-            parent?.classList.remove('tech-stack__tech--image', 'tech-stack__tech--image-light');
-            parent?.classList.add('tech-stack__tech--fallback');
-            const label = img.nextElementSibling as HTMLElement | null;
-            if (label) label.style.display = 'inline';
-          }}
-        />
-        <span className="tech-stack__tech-label" aria-hidden>{name}</span>
+      <span className="tech-stack__tech tech-stack__tech--icon">
+        <span className="tooltip" aria-hidden>
+          {name}
+        </span>
+        <Icon className="tech-stack__tech-img" aria-hidden />
+        <span className="visually-hidden">{name}</span>
       </span>
     );
   }
 
   return (
     <span className="tech-stack__tech tech-stack__tech--fallback">
-      <span className="tooltip" aria-hidden>{name}</span>
+      <span className="tooltip" aria-hidden>
+        {name}
+      </span>
       <span className="tech-stack__tech-label">{name}</span>
     </span>
   );
